@@ -1,3 +1,4 @@
+import { Customer } from './models/customer.model';
 import { Employee } from './models/employee.model';
 import { Candidate } from './models/candidate.model';
 import { Candidate as SingleCandidate } from './models/candidate.interface';
@@ -51,6 +52,18 @@ export class AppComponent implements OnInit {
     );
 
     console.log(employee1, employee2);
+
+    //Task 5
+
+    const customer1 = new Customer(
+      3,
+      'Milentije',
+      'milentije@gmail.com',
+      648562147,
+      'Milentija Popovica 34'
+    );
+
+    console.log(customer1.printAbout());
   }
 
   printCandidate(candidates: SingleCandidate[]): string {
