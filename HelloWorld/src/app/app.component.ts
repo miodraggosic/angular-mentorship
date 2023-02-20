@@ -64,6 +64,18 @@ export class AppComponent implements OnInit {
     );
 
     console.log(customer1.printAbout());
+
+    //Task 6
+
+    const customer2 = new Customer(
+      3,
+      'Valentino',
+      'valentino13@gmail.com',
+      648356147,
+      'Valentina Vodnika 47'
+    );
+
+    console.log(customer2.getName());
   }
 
   printCandidate(candidates: SingleCandidate[]): string {

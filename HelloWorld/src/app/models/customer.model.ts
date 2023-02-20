@@ -22,4 +22,8 @@ export class Customer {
   printAbout(): string {
     return `My name is: ${this.name}. You can contact me via email ${this.email} or phone +381${this.phone}.`;
   }
+
+  getName(): string {
+    return this.name;
+  }
 }
