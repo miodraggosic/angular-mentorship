@@ -1,3 +1,4 @@
+import { Employee } from './models/employee.model';
 import { Candidate } from './models/candidate.model';
 import { Candidate as SingleCandidate } from './models/candidate.interface';
 import { Component, OnInit } from '@angular/core';
@@ -31,6 +32,25 @@ export class AppComponent implements OnInit {
     //Task 3
 
     console.log(this.printCandidate(candidates));
+
+    //Task 4
+
+    const employee1 = new Employee(
+      1,
+      'Petko',
+      'petko@gmail.com',
+      662145458,
+      'front-end developer'
+    );
+    const employee2 = new Employee(
+      2,
+      'Sreten',
+      'sreten10@gmail.com',
+      617875458,
+      'back-end developer'
+    );
+
+    console.log(employee1, employee2);
   }
 
   printCandidate(candidates: SingleCandidate[]): string {
