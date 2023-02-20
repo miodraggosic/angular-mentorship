@@ -1,3 +1,4 @@
+import { User } from './models/user.model';
 import { Customer } from './models/customer.model';
 import { Employee } from './models/employee.model';
 import { Candidate } from './models/candidate.model';
@@ -82,6 +83,31 @@ export class AppComponent implements OnInit {
     );
 
     console.log(customer2.getName());
+
+    //Task 8
+
+    const user = new User(4, 'Marko', 'marko@yahoo.com', 65146987);
+
+    const customer3 = new Customer(
+      5,
+      'Nevena',
+      'nevena@gmail.com',
+      632145878,
+      'Takovska',
+      12,
+      'Nis',
+      'Srbija'
+    );
+
+    const employee3 = new Employee(
+      6,
+      'Radovan',
+      'radovan@gmail.com',
+      69321478,
+      'back-end dev'
+    );
+
+    console.log('Task 8', user, customer3, employee3);
   }
 
   printCandidate(candidates: SingleCandidate[]): string {
