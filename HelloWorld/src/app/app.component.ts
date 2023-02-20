@@ -1,3 +1,4 @@
+import { BaseEntity } from './models/baseEntity.interface';
 import { Product } from './models/pruduct.model';
 import { User } from './models/user.model';
 import { Customer } from './models/customer.model';
@@ -73,7 +74,7 @@ export class AppComponent implements OnInit {
     //Task 6
 
     const customer2 = new Customer(
-      3,
+      4,
       'Valentino',
       'valentino13@gmail.com',
       648356147,
@@ -87,10 +88,10 @@ export class AppComponent implements OnInit {
 
     //Task 8
 
-    const user = new User(4, 'Marko', 'marko@yahoo.com', 65146987);
+    const user1 = new User(5, 'Marko', 'marko@yahoo.com', 65146987);
 
     const customer3 = new Customer(
-      5,
+      6,
       'Nevena',
       'nevena@gmail.com',
       632145878,
@@ -101,42 +102,42 @@ export class AppComponent implements OnInit {
     );
 
     const employee3 = new Employee(
-      6,
+      7,
       'Radovan',
       'radovan@gmail.com',
       69321478,
       'back-end dev'
     );
 
-    console.log('Task 8', user, customer3, employee3);
+    console.log('Task 8', user1, customer3, employee3);
 
     //Task 9
 
-    const banana = new Product(
+    const product1 = new Product(
       10,
       'banana',
       2.14,
       'Bananas contain fiber, potassium, folate, and antioxidants, such as vitamin C. All of these support heart health.'
     );
-    const kiwi = new Product(
+    const product2 = new Product(
       11,
       'kiwi',
       1.35,
       'Kiwis are high in Vitamin C and dietary fiber and provide a variety of health benefits. This tart fruit can support heart health, digestive health, and immunity.'
     );
-    const orange = new Product(
+    const product3 = new Product(
       12,
       'orange',
       1.67,
       'Oranges are rich in nutrients like Vitamin A, Vitamin C and potassium which are great for your eyes. So, if you want your vision to be just as good as it is now, eat an orange every day!'
     );
-    const apple = new Product(
+    const product4 = new Product(
       13,
       'apple',
       1.12,
       'Apples are an incredibly nutritious fruit that offers multiple health benefits. They are rich in fiber and antioxidants.'
     );
-    const leamon = new Product(
+    const product5 = new Product(
       14,
       'leamon',
       2.44,
@@ -144,10 +145,75 @@ export class AppComponent implements OnInit {
     );
     console.log('Task 9');
 
-    console.log(banana.getDescription());
-    console.log(kiwi.getPrice());
-    console.log(apple.getTitle());
-    console.log(orange.getDescription());
+    console.log(product1.getDescription());
+    console.log(product2.getPrice());
+    console.log(product4.getTitle());
+    console.log(product5.getDescription());
+
+    //Task 10
+
+    const product6 = new Product(
+      15,
+      'melon',
+      1.74,
+      'Watermelon is a sweet and refreshing low calorie summer snack.'
+    );
+    const product7 = new Product(
+      16,
+      'plum',
+      1.04,
+      'Plums are chock full of fiber, which helps slow down a blood sugar spike after you eat carbs.'
+    );
+
+    const user2 = new User(8, 'Stefana', 'stefana@gmail.com', 60569875);
+    const user3 = new User(9, 'Stefan', 'stefalko@gmail.com', 63215489);
+
+    const customer4 = new Customer(
+      16,
+      'David',
+      'davidow@gmail.com',
+      61245876,
+      'Kosovska',
+      14,
+      'Novi Sad',
+      'Srbija'
+    );
+    const customer5 = new Customer(
+      17,
+      'Momcilo',
+      'momo@gmail.com',
+      612475226,
+      'Ustanicka',
+      37,
+      'Pirot',
+      'Srbija'
+    );
+
+    const employee4 = new Employee(
+      18,
+      'Milovan',
+      'mile@gmail.com',
+      69821477,
+      'back-end dev'
+    );
+    const employee5 = new Employee(
+      19,
+      'Goran',
+      'gile@gmail.com',
+      694466477,
+      'front-end dev'
+    );
+
+    const baseUser: BaseEntity = {
+      id: 20,
+    };
+
+    console.log(user2, customer4, employee5);
+
+    console.log(baseUser);
+    console.log(
+      'A class is a blueprint from which we can create objects that share the same configuration - properties and methods. An interface is a group of related properties and methods that describe an object, but neither provides implementation nor initialisation for them.'
+    );
   }
 
   printCandidate(candidates: SingleCandidate[]): string {

@@ -1,5 +1,6 @@
-export class User {
-  protected id: number;
+import { BaseEntity } from './baseEntity.interface';
+export class User implements BaseEntity {
+  readonly id: number;
   protected name: string;
   protected email: string;
   protected phone: number;
