@@ -60,7 +60,10 @@ export class AppComponent implements OnInit {
       'Milentije',
       'milentije@gmail.com',
       648562147,
-      'Milentija Popovica 34'
+      'Milentija Popovica',
+      47,
+      'Beograd',
+      'Srbija'
     );
 
     console.log(customer1.printAbout());
@@ -72,7 +75,10 @@ export class AppComponent implements OnInit {
       'Valentino',
       'valentino13@gmail.com',
       648356147,
-      'Valentina Vodnika 47'
+      'Valentina Vodnika',
+      47,
+      'Novi Sad',
+      'Srbija'
     );
 
     console.log(customer2.getName());
