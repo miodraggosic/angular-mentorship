@@ -21,4 +21,8 @@ export class Product implements BaseEntity {
   getDescription(): string {
     return this.description;
   }
+
+  sayHello(): void {
+    console.log('Hello from Product class');
+  }
 }

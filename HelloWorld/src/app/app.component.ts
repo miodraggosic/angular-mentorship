@@ -208,12 +208,48 @@ export class AppComponent implements OnInit {
       id: 20,
     };
 
-    console.log(user2, customer4, employee5);
+    console.log('Task 10', user2, customer4, employee5);
 
     console.log(baseUser);
     console.log(
       'A class is a blueprint from which we can create objects that share the same configuration - properties and methods. An interface is a group of related properties and methods that describe an object, but neither provides implementation nor initialisation for them.'
     );
+
+    //Task 11
+
+    const user4 = new User(21, 'Bosko', 'boki@yahho.mail', 61452879);
+    console.log('Task 11');
+
+    user4.sayHello();
+
+    const product8 = new Product(
+      22,
+      'apricot',
+      2.02,
+      'Apricots are a great source of many antioxidants, including beta carotene and vitamins A, C, and E.'
+    );
+    product8.sayHello();
+
+    const customer6 = new Customer(
+      22,
+      'Andrija',
+      'andre@gmail.com',
+      62456985,
+      'Uspenska',
+      35,
+      'Novi Sad',
+      'Srbija'
+    );
+    customer6.sayHello();
+
+    const employee6 = new Employee(
+      23,
+      'Milica',
+      'mila@gmail.com',
+      66785423,
+      'dev-ops'
+    );
+    employee6.sayHello();
   }
 
   printCandidate(candidates: SingleCandidate[]): string {
