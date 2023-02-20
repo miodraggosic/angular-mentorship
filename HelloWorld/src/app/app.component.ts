@@ -1,3 +1,4 @@
+import { BaseType } from './models/baseType.interface';
 import { Job } from './models/job.interface';
 import { Book } from './models/book.interface';
 import { Post } from './models/post.interface';

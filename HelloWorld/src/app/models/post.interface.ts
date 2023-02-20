@@ -1,7 +1,5 @@
-export interface Post {
-  id: number;
-  title: string;
-  description: string;
+import { BaseType } from './baseType.interface';
+export interface Post extends BaseType {
   dateCreated: Date;
   numberOfLikes: number;
 }

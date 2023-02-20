@@ -1,7 +1,6 @@
-export interface Job {
-  id: number;
-  title: string;
-  description: string;
+import { BaseType } from './baseType.interface';
+
+export interface Job extends BaseType {
   workHours: number;
   pricePerHour: number;
 }
