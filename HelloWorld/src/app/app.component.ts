@@ -1,3 +1,4 @@
+import { Book } from './models/book.interface';
 import { Post } from './models/post.interface';
 import { BaseEntity } from './models/baseEntity.interface';
 import { Product } from './models/pruduct.model';
@@ -275,6 +276,33 @@ export class AppComponent implements OnInit {
 
     console.log(post1);
     console.log(post2);
+
+    //Task 13
+
+    const book1: Book = {
+      id: 26,
+      title: 'Modern Man in Search of a Soul',
+      description:
+        'A provocative and enlightening look at spiritual unease and its contribution to the void in modern civilization.',
+      dateCreated: new Date(1931, 0, 1),
+      author: 'Carl Gustav Jung',
+      numberOfStars: 4,
+      category: 'Psychology',
+    };
+
+    const book2: Book = {
+      id: 27,
+      title: 'The Rebel',
+      description:
+        'By one of the most profoundly influential thinkers of our century, The Rebel is a classic essay on revolution.',
+      dateCreated: new Date(1951, 0, 1),
+      author: 'Albert Camus',
+      numberOfStars: 4,
+      category: 'Philosophy',
+    };
+
+    console.log('Task 13');
+    console.log(book1, book2);
   }
 
   printCandidate(candidates: SingleCandidate[]): string {
