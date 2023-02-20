@@ -1,3 +1,4 @@
+import { Post } from './models/post.interface';
 import { BaseEntity } from './models/baseEntity.interface';
 import { Product } from './models/pruduct.model';
 import { User } from './models/user.model';
@@ -250,6 +251,30 @@ export class AppComponent implements OnInit {
       'dev-ops'
     );
     employee6.sayHello();
+
+    //Task 12
+
+    console.log('Task 12');
+
+    const post1: Post = {
+      id: 24,
+      title: 'Red Star Belgrade win Serbian basketball cup',
+      description:
+        'Red Star won their third consecutive and ninth overall Radivoj Korac Cup, as well as their 12th national cup title in club history.',
+      dateCreated: new Date(),
+      numberOfLikes: 14,
+    };
+    const post2: Post = {
+      id: 25,
+      title: 'Strengthening of business ties with Romania to focus on Danube',
+      description:
+        'Serbia and Romania have excellent bilateral relations, as well as great opportunities for strengthening business ties and economic cooperation, especially in the energy, logistics, trade and tourism sectors.',
+      dateCreated: new Date(),
+      numberOfLikes: 9,
+    };
+
+    console.log(post1);
+    console.log(post2);
   }
 
   printCandidate(candidates: SingleCandidate[]): string {
