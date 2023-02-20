@@ -1,3 +1,4 @@
+import { Job } from './models/job.interface';
 import { Book } from './models/book.interface';
 import { Post } from './models/post.interface';
 import { BaseEntity } from './models/baseEntity.interface';
@@ -303,6 +304,28 @@ export class AppComponent implements OnInit {
 
     console.log('Task 13');
     console.log(book1, book2);
+
+    //Task 14
+
+    const job1: Job = {
+      id: 28,
+      title: 'Data Architect',
+      description:
+        'Developing database solutions to store and retrieve company information. Analyzing structural requirements for new software and applications.',
+      workHours: 8,
+      pricePerHour: 12,
+    };
+    const job2: Job = {
+      id: 29,
+      title: 'Scrum Master',
+      description:
+        'Helping software development teams apply the Scrum framework. Resolving issues that hinder the teams work.',
+      workHours: 8,
+      pricePerHour: 14,
+    };
+
+    console.log('Task14');
+    console.log(job1, job2);
   }
 
   printCandidate(candidates: SingleCandidate[]): string {
