@@ -1,3 +1,4 @@
+import { Product } from './models/pruduct.model';
 import { User } from './models/user.model';
 import { Customer } from './models/customer.model';
 import { Employee } from './models/employee.model';
@@ -108,6 +109,45 @@ export class AppComponent implements OnInit {
     );
 
     console.log('Task 8', user, customer3, employee3);
+
+    //Task 9
+
+    const banana = new Product(
+      10,
+      'banana',
+      2.14,
+      'Bananas contain fiber, potassium, folate, and antioxidants, such as vitamin C. All of these support heart health.'
+    );
+    const kiwi = new Product(
+      11,
+      'kiwi',
+      1.35,
+      'Kiwis are high in Vitamin C and dietary fiber and provide a variety of health benefits. This tart fruit can support heart health, digestive health, and immunity.'
+    );
+    const orange = new Product(
+      12,
+      'orange',
+      1.67,
+      'Oranges are rich in nutrients like Vitamin A, Vitamin C and potassium which are great for your eyes. So, if you want your vision to be just as good as it is now, eat an orange every day!'
+    );
+    const apple = new Product(
+      13,
+      'apple',
+      1.12,
+      'Apples are an incredibly nutritious fruit that offers multiple health benefits. They are rich in fiber and antioxidants.'
+    );
+    const leamon = new Product(
+      14,
+      'leamon',
+      2.44,
+      'Lemons contain a high amount of vitamin C, soluble fiber, and plant compounds that give them a number of health benefits.'
+    );
+    console.log('Task 9');
+
+    console.log(banana.getDescription());
+    console.log(kiwi.getPrice());
+    console.log(apple.getTitle());
+    console.log(orange.getDescription());
   }
 
   printCandidate(candidates: SingleCandidate[]): string {
