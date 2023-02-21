@@ -1,6 +1,7 @@
 import { BaseType } from './models/baseType.interface';
-import { Job } from './models/job.interface';
 import { Book } from './models/book.interface';
+import { Job } from './models/job.model';
+import { Job as singleJob } from './models/job.interface';
 import { Post } from './models/post.interface';
 import { BaseEntity } from './models/baseEntity.interface';
 import { Product } from './models/pruduct.model';
@@ -308,7 +309,7 @@ export class AppComponent implements OnInit {
 
     //Task 14
 
-    const job1: Job = {
+    const job1: singleJob = {
       id: 28,
       title: 'Data Architect',
       description:
@@ -316,7 +317,7 @@ export class AppComponent implements OnInit {
       workHours: 8,
       pricePerHour: 12,
     };
-    const job2: Job = {
+    const job2: singleJob = {
       id: 29,
       title: 'Scrum Master',
       description:
@@ -327,6 +328,27 @@ export class AppComponent implements OnInit {
 
     console.log('Task14');
     console.log(job1, job2);
+
+    //Task 16
+
+    const job3 = new Job(
+      30,
+      'Full Stack Developer',
+      'A Full-Stack developer is a professional responsible for working on both front-end and back-end development processes.',
+      192,
+      13
+    );
+    const job4 = new Job(
+      31,
+      'Front-end Developer',
+      'A Front-End Web Developer is a tech industry professional who builds the front portion of websites that customers, guests, or clients use on a daily basis.',
+      160,
+      11
+    );
+    console.log('Task 16');
+
+    console.log(job3.getSalary());
+    console.log(job4.getSalary());
   }
 
   printCandidate(candidates: SingleCandidate[]): string {
