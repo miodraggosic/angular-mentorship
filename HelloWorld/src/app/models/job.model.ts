@@ -1,4 +1,4 @@
-import { Job as singleJob } from './job.interface';
+import { Job as singleJob } from './interfaces/job.interface';
 export class Job implements singleJob {
   id: number;
   title: string;

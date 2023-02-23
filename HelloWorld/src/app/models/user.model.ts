@@ -1,4 +1,4 @@
-import { BaseEntity } from './baseEntity.interface';
+import { BaseEntity } from './interfaces/baseEntity.interface';
 export class User implements BaseEntity {
   readonly id: number;
   protected name: string;

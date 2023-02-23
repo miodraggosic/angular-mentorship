@@ -1,4 +1,4 @@
-import { BaseEntity } from './baseEntity.interface';
+import { BaseEntity } from './interfaces/baseEntity.interface';
 export class Product implements BaseEntity {
   readonly id: number;
   readonly title: string;

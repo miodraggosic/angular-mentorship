@@ -1,16 +1,16 @@
 import { ApiResponse } from './models/apiResponse.model';
 import { DateFormats } from './models/enums/dateFormats.enum';
-import { Book } from './models/book.interface';
+import { Book } from './models/interfaces/book.interface';
 import { Job } from './models/job.model';
-import { Job as singleJob } from './models/job.interface';
-import { Post } from './models/post.interface';
-import { BaseEntity } from './models/baseEntity.interface';
+import { Job as singleJob } from './models/interfaces/job.interface';
+import { Post } from './models/interfaces/post.interface';
+import { BaseEntity } from './models/interfaces/baseEntity.interface';
 import { Product } from './models/pruduct.model';
 import { User } from './models/user.model';
 import { Customer } from './models/customer.model';
 import { Employee } from './models/employee.model';
 import { Candidate } from './models/candidate.model';
-import { Candidate as SingleCandidate } from './models/candidate.interface';
+import { Candidate as SingleCandidate } from './models/interfaces/candidate.interface';
 import { Component, OnInit } from '@angular/core';
 import { SumResult } from './models/enums/sumResult.type';
 
