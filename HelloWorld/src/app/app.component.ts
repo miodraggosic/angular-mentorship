@@ -1,5 +1,4 @@
 import { DateFormats } from './models/enums/dateFormats.enum';
-import { BaseType } from './models/baseType.interface';
 import { Book } from './models/book.interface';
 import { Job } from './models/job.model';
 import { Job as singleJob } from './models/job.interface';
@@ -12,6 +11,7 @@ import { Employee } from './models/employee.model';
 import { Candidate } from './models/candidate.model';
 import { Candidate as SingleCandidate } from './models/candidate.interface';
 import { Component, OnInit } from '@angular/core';
+import { SumResult } from './models/enums/sumResult.type';
 
 @Component({
   selector: 'app-root',
@@ -357,6 +357,13 @@ export class AppComponent implements OnInit {
     console.log(this.formatDate('23/06/2021', DateFormats.yearFirst));
     console.log(this.formatDate('04-15 1988', DateFormats.dayFirst));
     console.log(this.formatDate('1985-06-21', DateFormats.monthFirst));
+
+    //Task 18
+    console.log('Task 18');
+
+    console.log(this.calculate(4, 8));
+    console.log(this.calculate(8, 25));
+    console.log(this.calculate(47, -32));
   }
 
   printCandidate(candidates: SingleCandidate[]): string {
@@ -408,5 +415,14 @@ export class AppComponent implements OnInit {
         break;
     }
     //Hardcoded mess :)
+  }
+
+  calculate(x: number, y: number): SumResult {
+    let resObj = {
+      a: x,
+      b: y,
+      sum: x + y,
+    };
+    return resObj;
   }
 }
