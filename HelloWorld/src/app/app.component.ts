@@ -1,3 +1,4 @@
+import { DateFormats } from './models/enums/dateFormats.enum';
 import { BaseType } from './models/baseType.interface';
 import { Book } from './models/book.interface';
 import { Job } from './models/job.model';
@@ -349,6 +350,13 @@ export class AppComponent implements OnInit {
 
     console.log(job3.getSalary());
     console.log(job4.getSalary());
+
+    //Task 17
+    console.log('Task 17');
+
+    console.log(this.formatDate('23/06/2021', DateFormats.yearFirst));
+    console.log(this.formatDate('04-15 1988', DateFormats.dayFirst));
+    console.log(this.formatDate('1985-06-21', DateFormats.monthFirst));
   }
 
   printCandidate(candidates: SingleCandidate[]): string {
@@ -360,5 +368,45 @@ export class AppComponent implements OnInit {
     }
 
     return display;
+  }
+
+  formatDate(date: string, format: DateFormats): string {
+    function formatDate(arrIndex: number[], arrDate: string[]) {
+      let dateObj = {
+        YYYY: arrDate[arrIndex[0]],
+        MM: arrDate[arrIndex[1]],
+        DD: arrDate[arrIndex[2]],
+      };
+      return dateObj;
+    }
+
+    let dateFormat = format.indexOf('D');
+    let formatedDate;
+
+    let dateSplit = date.split('/');
+
+    if (dateSplit.length == 3) {
+      formatedDate = formatDate([2, 1, 0], dateSplit);
+    } else {
+      dateSplit = date.split(/-|\s/);
+      dateSplit[0].length == 4
+        ? (formatedDate = formatDate([0, 1, 2], dateSplit))
+        : (formatedDate = formatDate([2, 0, 1], dateSplit));
+    }
+
+    switch (dateFormat) {
+      case 0:
+        return `${formatedDate.DD} ${formatedDate.MM} ${formatedDate.YYYY} `;
+        break;
+
+      case 2:
+        return `${formatedDate.MM} ${formatedDate.DD} ${formatedDate.YYYY} `;
+        break;
+
+      default:
+        return Object.values(formatedDate).join(' ');
+        break;
+    }
+    //Hardcoded mess :)
   }
 }
