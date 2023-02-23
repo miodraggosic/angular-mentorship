@@ -1,3 +1,4 @@
+import { ApiResponse } from './models/apiResponse.model';
 import { DateFormats } from './models/enums/dateFormats.enum';
 import { Book } from './models/book.interface';
 import { Job } from './models/job.model';
@@ -364,6 +365,22 @@ export class AppComponent implements OnInit {
     console.log(this.calculate(4, 8));
     console.log(this.calculate(8, 25));
     console.log(this.calculate(47, -32));
+
+    //Task 19
+
+    console.log('Task 19');
+
+    const arrJobs = [job3, job4];
+    const apiJobs = new ApiResponse(arrJobs);
+    console.log(apiJobs);
+
+    const arrBooks = [book1, book2];
+    const apiBooks = new ApiResponse(arrBooks);
+    console.log(apiBooks);
+
+    const arrPosts = [post1, post2];
+    const apiPosts = new ApiResponse(arrPosts);
+    console.log(apiPosts);
   }
 
   printCandidate(candidates: SingleCandidate[]): string {
