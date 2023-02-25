@@ -1,9 +1,9 @@
 import { BaseEntity } from './interfaces/baseEntity.interface';
 export class User implements BaseEntity {
-  readonly id: number;
-  protected name: string;
-  protected email: string;
-  protected phone: number;
+  id: number;
+  name: string;
+  email: string;
+  phone: number;
 
   constructor(id: number, name: string, email: string, phone: number) {
     this.id = id;

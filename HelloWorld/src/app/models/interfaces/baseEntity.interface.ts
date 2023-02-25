@@ -1,4 +1,4 @@
 export interface BaseEntity {
-  readonly id: number;
+  id: number;
   sayHello?: () => void;
 }
