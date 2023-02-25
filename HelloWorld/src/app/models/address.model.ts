@@ -1,21 +1,10 @@
-import { User } from './user.model';
-export class Address extends User {
+export class Address {
   street: string;
   houseNum: number;
   city: string;
   country: string;
 
-  constructor(
-    id: number,
-    name: string,
-    email: string,
-    phone: number,
-    street: string,
-    houseNum: number,
-    city: string,
-    country: string
-  ) {
-    super(id, name, email, phone);
+  constructor(street: string, houseNum: number, city: string, country: string) {
     this.street = street;
     this.houseNum = houseNum;
     this.city = city;
