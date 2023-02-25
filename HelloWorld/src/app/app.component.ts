@@ -10,9 +10,9 @@ import { User } from './models/user.model';
 import { Customer } from './models/customer.model';
 import { Employee } from './models/employee.model';
 import { Candidate } from './models/candidate.model';
-import { Candidate as SingleCandidate } from './models/interfaces/candidate.interface';
 import { Component, OnInit } from '@angular/core';
 import { SumResult } from './models/enums/sumResult.type';
+import { Address } from './models/address.model';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
 
     //Task2
 
-    const candidates: SingleCandidate[] = [candidate1, candidate2, candidate3];
+    const candidates: Candidate[] = [candidate1, candidate2, candidate3];
 
     console.log(candidates);
 
@@ -70,10 +70,7 @@ export class AppComponent implements OnInit {
       'Milentije',
       'milentije@gmail.com',
       648562147,
-      'Milentija Popovica',
-      47,
-      'Beograd',
-      'Srbija'
+      new Address('Milentija Popovica', 47, 'Beograd', 'Srbija')
     );
 
     console.log(customer1.printAbout());
@@ -85,10 +82,7 @@ export class AppComponent implements OnInit {
       'Valentino',
       'valentino13@gmail.com',
       648356147,
-      'Valentina Vodnika',
-      47,
-      'Novi Sad',
-      'Srbija'
+      new Address('Valentina Vodnika', 47, 'Novi Sad', 'Srbija')
     );
 
     console.log(customer2.getName());
@@ -102,10 +96,7 @@ export class AppComponent implements OnInit {
       'Nevena',
       'nevena@gmail.com',
       632145878,
-      'Takovska',
-      12,
-      'Nis',
-      'Srbija'
+      new Address('Takovska', 12, 'Nis', 'Srbija')
     );
 
     const employee3 = new Employee(
@@ -180,20 +171,14 @@ export class AppComponent implements OnInit {
       'David',
       'davidow@gmail.com',
       61245876,
-      'Kosovska',
-      14,
-      'Novi Sad',
-      'Srbija'
+      new Address('Kosovska', 14, 'Novi Sad', 'Srbija')
     );
     const customer5 = new Customer(
       17,
       'Momcilo',
       'momo@gmail.com',
       612475226,
-      'Ustanicka',
-      37,
-      'Pirot',
-      'Srbija'
+      new Address('Ustanicka', 37, 'Pirot', 'Srbija')
     );
 
     const employee4 = new Employee(
@@ -223,9 +208,9 @@ export class AppComponent implements OnInit {
     );
 
     //Task 11
+    console.log('Task 11');
 
     const user4 = new User(21, 'Bosko', 'boki@yahho.mail', 61452879);
-    console.log('Task 11');
 
     user4.sayHello();
 
@@ -235,6 +220,7 @@ export class AppComponent implements OnInit {
       2.02,
       'Apricots are a great source of many antioxidants, including beta carotene and vitamins A, C, and E.'
     );
+
     product8.sayHello();
 
     const customer6 = new Customer(
@@ -242,10 +228,7 @@ export class AppComponent implements OnInit {
       'Andrija',
       'andre@gmail.com',
       62456985,
-      'Uspenska',
-      35,
-      'Novi Sad',
-      'Srbija'
+      new Address('Uspenska', 35, 'Novi Sad', 'Srbija')
     );
     customer6.sayHello();
 
@@ -383,7 +366,7 @@ export class AppComponent implements OnInit {
     console.log(apiPosts);
   }
 
-  printCandidate(candidates: SingleCandidate[]): string {
+  printCandidate(candidates: Candidate[]): string {
     let display: string = '';
     for (const candidate of candidates) {
       display += ` ${candidate.firstName} ${
