@@ -344,14 +344,14 @@ export class AppComponent implements OnInit {
   }
 
   printCandidate(candidates: Candidate[]): string {
-    let display: string = '';
-    for (const candidate of candidates) {
-      display += ` ${candidate.firstName} ${
-        candidate.lastName
-      }: ${candidate.birthday.toDateString()};`;
-    }
-
-    return display;
+    return candidates
+      .map(
+        (candidate) =>
+          `${candidate.firstName} ${
+            candidate.lastName
+          }: ${candidate.birthday.toDateString()}`
+      )
+      .join('; ');
   }
 
   formatDate(date: Date, formatOf: DateFormats): string {
