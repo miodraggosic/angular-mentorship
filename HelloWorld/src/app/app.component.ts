@@ -330,16 +330,16 @@ export class AppComponent implements OnInit {
 
     console.log('Task 19');
 
-    const arrJobs = [job3, job4];
-    const apiJobs = new ApiResponse(arrJobs);
+    const arrJobs: Job[] = [job3, job4];
+    const apiJobs: ApiResponse<Job> = new ApiResponse(arrJobs);
     console.log(apiJobs);
 
-    const arrBooks = [book1, book2];
-    const apiBooks = new ApiResponse(arrBooks);
+    const arrBooks: Book[] = [book1, book2];
+    const apiBooks: ApiResponse<Book> = new ApiResponse(arrBooks);
     console.log(apiBooks);
 
-    const arrPosts = [post1, post2];
-    const apiPosts = new ApiResponse(arrPosts);
+    const arrPosts: Post[] = [post1, post2];
+    const apiPosts: ApiResponse<Post> = new ApiResponse(arrPosts);
     console.log(apiPosts);
   }
 
