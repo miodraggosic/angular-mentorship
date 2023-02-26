@@ -2,7 +2,6 @@ import { ApiResponse } from './models/apiResponse.model';
 import { DateFormats } from './models/enums/dateFormats.enum';
 import { Book } from './models/interfaces/book.interface';
 import { Job } from './models/job.model';
-import { Job as singleJob } from './models/interfaces/job.interface';
 import { Post } from './models/interfaces/post.interface';
 import { BaseEntity } from './models/interfaces/baseEntity.interface';
 import { Product } from './models/pruduct.model';
@@ -291,28 +290,6 @@ export class AppComponent implements OnInit {
 
     console.log('Task 13');
     console.log(book1, book2);
-
-    //Task 14
-
-    const job1: singleJob = {
-      id: 28,
-      title: 'Data Architect',
-      description:
-        'Developing database solutions to store and retrieve company information. Analyzing structural requirements for new software and applications.',
-      workHours: 8,
-      pricePerHour: 12,
-    };
-    const job2: singleJob = {
-      id: 29,
-      title: 'Scrum Master',
-      description:
-        'Helping software development teams apply the Scrum framework. Resolving issues that hinder the teams work.',
-      workHours: 8,
-      pricePerHour: 14,
-    };
-
-    console.log('Task14');
-    console.log(job1, job2);
 
     //Task 16
 

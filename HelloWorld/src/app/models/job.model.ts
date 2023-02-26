@@ -1,5 +1,5 @@
-import { Job as singleJob } from './interfaces/job.interface';
-export class Job implements singleJob {
+import { CommonFields } from './interfaces/CommonFields.interface';
+export class Job implements CommonFields {
   id: number;
   title: string;
   description: string;
@@ -21,6 +21,6 @@ export class Job implements singleJob {
   }
 
   getSalary(): number {
-    return this.workHours! * this.pricePerHour!;
+    return this.workHours * this.pricePerHour;
   }
 }
