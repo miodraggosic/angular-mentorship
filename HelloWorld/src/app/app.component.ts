@@ -360,13 +360,13 @@ export class AppComponent implements OnInit {
     const day = date.getDay();
 
     switch (formatOf) {
-      case 0:
+      case DateFormats.YYYYMMDD:
         return `${year} ${month} ${day}`;
 
-      case 1:
+      case DateFormats.DDMMYYYY:
         return `${day} ${month} ${year}`;
 
-      default:
+      case DateFormats.MMDDYYYY:
         return `${month} ${day} ${year}`;
     }
   }
