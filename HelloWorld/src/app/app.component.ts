@@ -10,7 +10,7 @@ import { Customer } from './models/customer.model';
 import { Employee } from './models/employee.model';
 import { Candidate } from './models/candidate.model';
 import { Component, OnInit } from '@angular/core';
-import { SumResult } from './models/enums/sumResult.type';
+import { SumResult } from './models/types/sumResult.type';
 import { Address } from './models/address.model';
 
 @Component({
