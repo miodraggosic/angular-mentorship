@@ -12,15 +12,19 @@ export class Product implements BaseEntity {
     this.description = description;
   }
 
+  //#region Getters
   getPrice(): number {
     return this.price;
   }
+
   getTitle(): string {
     return this.title;
   }
+
   getDescription(): string {
     return this.description;
   }
+  //#endregion Getters
 
   sayHello(): void {
     console.log('Hello from Product class');
