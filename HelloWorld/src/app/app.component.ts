@@ -315,9 +315,9 @@ export class AppComponent implements OnInit {
     //Task 17
     console.log('Task 17');
 
-    console.log(this.formatDate('23/06/2021', DateFormats.yearFirst));
-    console.log(this.formatDate('04-15 1988', DateFormats.dayFirst));
-    console.log(this.formatDate('1985-06-21', DateFormats.monthFirst));
+    console.log(this.formatDate(new Date(1992, 0, 12), DateFormats.YYYYMMDD));
+    console.log(this.formatDate(new Date(1992, 3, 25), DateFormats.MMDDYYYY));
+    console.log(this.formatDate(new Date(1992, 11, 31), DateFormats.DDMMYYYY));
 
     //Task 18
     console.log('Task 18');
@@ -354,44 +354,21 @@ export class AppComponent implements OnInit {
     return display;
   }
 
-  formatDate(date: string, format: DateFormats): string {
-    function formatDate(arrIndex: number[], arrDate: string[]) {
-      let dateObj = {
-        YYYY: arrDate[arrIndex[0]],
-        MM: arrDate[arrIndex[1]],
-        DD: arrDate[arrIndex[2]],
-      };
-      return dateObj;
-    }
+  formatDate(date: Date, formatOf: DateFormats): string {
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDay();
 
-    let dateFormat = format.indexOf('D');
-    let formatedDate;
-
-    let dateSplit = date.split('/');
-
-    if (dateSplit.length == 3) {
-      formatedDate = formatDate([2, 1, 0], dateSplit);
-    } else {
-      dateSplit = date.split(/-|\s/);
-      dateSplit[0].length == 4
-        ? (formatedDate = formatDate([0, 1, 2], dateSplit))
-        : (formatedDate = formatDate([2, 0, 1], dateSplit));
-    }
-
-    switch (dateFormat) {
+    switch (formatOf) {
       case 0:
-        return `${formatedDate.DD} ${formatedDate.MM} ${formatedDate.YYYY} `;
-        break;
+        return `${year} ${month} ${day}`;
 
-      case 2:
-        return `${formatedDate.MM} ${formatedDate.DD} ${formatedDate.YYYY} `;
-        break;
+      case 1:
+        return `${day} ${month} ${year}`;
 
       default:
-        return Object.values(formatedDate).join(' ');
-        break;
+        return `${month} ${day} ${year}`;
     }
-    //Hardcoded mess :)
   }
 
   calculate(x: number, y: number): SumResult {
