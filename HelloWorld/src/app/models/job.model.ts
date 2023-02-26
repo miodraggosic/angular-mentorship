@@ -1,4 +1,4 @@
-import { CommonFields } from './interfaces/CommonFields.interface';
+import { CommonFields } from './interfaces/commonFields.interface';
 export class Job implements CommonFields {
   id: number;
   title: string;
