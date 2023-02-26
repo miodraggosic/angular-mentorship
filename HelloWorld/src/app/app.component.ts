@@ -372,11 +372,10 @@ export class AppComponent implements OnInit {
   }
 
   calculate(x: number, y: number): SumResult {
-    let resObj = {
+    return {
       a: x,
       b: y,
       sum: x + y,
     };
-    return resObj;
   }
 }
