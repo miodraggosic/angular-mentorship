@@ -195,13 +195,8 @@ export class AppComponent implements OnInit {
       'front-end dev'
     );
 
-    const baseUser: BaseEntity = {
-      id: 20,
-    };
-
     console.log('Task 10', user2, customer4, employee5);
 
-    console.log(baseUser);
     console.log(
       'A class is a blueprint from which we can create objects that share the same configuration - properties and methods. An interface is a group of related properties and methods that describe an object, but neither provides implementation nor initialisation for them.'
     );
