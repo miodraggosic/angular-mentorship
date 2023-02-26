@@ -1,5 +1,5 @@
-import { BaseType } from './baseType.interface';
-export interface Post extends BaseType {
+import { CommonFields } from './CommonFields.interface';
+export interface Post extends CommonFields {
   dateCreated: Date;
   numberOfLikes: number;
 }

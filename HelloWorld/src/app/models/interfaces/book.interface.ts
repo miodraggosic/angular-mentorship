@@ -1,6 +1,6 @@
-import { BaseType } from './baseType.interface';
+import { CommonFields } from './CommonFields.interface';
 
-export interface Book extends BaseType {
+export interface Book extends CommonFields {
   dateCreated: Date;
   author: string;
   numberOfStars: number;
