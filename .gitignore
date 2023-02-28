@@ -36,6 +36,7 @@ package-lock.json
 testem.log
 /typings
 HelloWorld
+GoldenBook
 
 # System files
 .DS_Store
