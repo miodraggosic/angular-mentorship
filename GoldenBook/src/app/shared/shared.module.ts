@@ -5,17 +5,14 @@ import { BookComponent } from './components/book/book.component';
 import { SearchComponent } from './components/search/search.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 
-
-
 @NgModule({
   declarations: [
     CardComponent,
     BookComponent,
     SearchComponent,
-    DropdownComponent
+    DropdownComponent,
   ],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
+  exports: [CardComponent, BookComponent, SearchComponent, DropdownComponent],
 })
-export class SharedModule { }
+export class SharedModule {}
