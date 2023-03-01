@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from './components/card/card.component';
 import { BookComponent } from './components/book/book.component';
 import { SearchComponent } from './components/search/search.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
 
 
 
@@ -10,7 +11,8 @@ import { SearchComponent } from './components/search/search.component';
   declarations: [
     CardComponent,
     BookComponent,
-    SearchComponent
+    SearchComponent,
+    DropdownComponent
   ],
   imports: [
     CommonModule
