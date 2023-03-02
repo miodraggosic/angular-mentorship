@@ -1,1 +1,9 @@
-<p>dropdown works!</p>
+<label for="category">
+  <select name="" (click)="selectedCategory($event)" id="category">
+    <option value="">Filter by Category</option>
+    <option [value]="categoriesFilter[0]">{{categoriesFilter[0]}}</option>
+    <option [value]="categoriesFilter[1]">{{categoriesFilter[1]}}</option>
+    <option [value]="categoriesFilter[2]">{{categoriesFilter[2]}}</option>
+    <option [value]="categoriesFilter[3]">{{categoriesFilter[3]}}</option>
+  </select>
+</label>
