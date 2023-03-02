@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Categories } from 'src/app/models/enums/category.enum';
+import { Component, Input, OnInit } from '@angular/core';
+import { Categories } from 'src/app/models/enums/categories.enum';
 import { Book } from 'src/app/models/interfaces/book.interface';
 
 @Component({
@@ -8,6 +8,8 @@ import { Book } from 'src/app/models/interfaces/book.interface';
   styleUrls: ['./library.component.scss'],
 })
 export class LibraryComponent implements OnInit {
+  displayValue: string = '';
+
   books: Book[] = [
     {
       imageUrl: '../../../../assets/images/books/moneyPower.png',
@@ -68,4 +70,8 @@ export class LibraryComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  showValue(event: string) {
+    this.displayValue = event;
+  }
 }
