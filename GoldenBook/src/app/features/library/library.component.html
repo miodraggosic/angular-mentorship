@@ -2,7 +2,7 @@
   <p class="displayOutput">{{displayValue}}</p>
   <div>
     <app-search (displayTerm)="showValue($event)"></app-search>
-    <app-dropdown></app-dropdown>
+    <app-dropdown (displayCategory)="showValue($event)"></app-dropdown>
   </div>
   <div>
     <app-card [book]="books[0]"></app-card>
