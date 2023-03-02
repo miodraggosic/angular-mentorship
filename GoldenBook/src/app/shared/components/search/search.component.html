@@ -1,1 +1,4 @@
-<p>search works!</p>
+<label for="search">
+  <input type="text" (keyup)="searchTerm($event)" placeholder="search by Book Name">
+  <button (click)="onClick()">Search</button>
+</label>
