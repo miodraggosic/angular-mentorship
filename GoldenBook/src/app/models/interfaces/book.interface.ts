@@ -1,4 +1,4 @@
-import { Categories } from '../enums/category.enum';
+import { Categories } from '../enums/categories.enum';
 
 export interface Book {
   imageUrl: string;
