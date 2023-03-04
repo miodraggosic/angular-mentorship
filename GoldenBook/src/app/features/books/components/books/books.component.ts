@@ -4,10 +4,10 @@ import { Book } from 'src/app/models/interfaces/book.interface';
 
 @Component({
   selector: 'app-library',
-  templateUrl: './library.component.html',
-  styleUrls: ['./library.component.scss'],
+  templateUrl: './books.component.html',
+  styleUrls: ['./books.component.scss'],
 })
-export class LibraryComponent implements OnInit {
+export class BooksComponent implements OnInit {
   displayValue: string = '';
 
   books: Book[] = [
