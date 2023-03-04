@@ -3,7 +3,7 @@ import { Categories } from 'src/app/models/enums/categories.enum';
 import { Book } from 'src/app/models/interfaces/book.interface';
 
 @Component({
-  selector: 'app-library',
+  selector: 'app-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.scss'],
 })
