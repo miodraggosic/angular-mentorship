@@ -15,8 +15,6 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {}
 
   onClick(): void {
-    console.log(this.term);
-
     this.displayTerm.emit(this.term);
   }
 
