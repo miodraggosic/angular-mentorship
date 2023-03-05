@@ -1,0 +1,30 @@
+@import url(../../../../styles/variables.scss);
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1vw 0;
+
+  div {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .burger-icon {
+    background-image: url(../../../../assets/images/icons/hamburger.png);
+    margin-inline-start: 2vw;
+  }
+  .avatar-icon {
+    background-image: url(../../../../assets/images/icons/avatar.png);
+    margin-inline-end: 2vw;
+  }
+  button {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 0;
+    color: $white;
+    width: 2vw;
+    height: 100%;
+  }
+}
