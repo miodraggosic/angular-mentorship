@@ -1,10 +1,16 @@
-<div class="book">
+<div class="book-card">
   <h4>{{book.title}}</h4>
-  <div class="bookImage"><img [src]="book.imageUrl" alt=""></div>
 
-  <div class="bookBio">
-    <h5>{{book.author}}</h5>
-    <h5>{{book.category}}</h5>
-    <p>{{book.description}}</p>
+  <div class="book">
+    <div class="book-image">
+      <img [src]="book.imageUrl" alt="">
+    </div>
+
+    <div class="book-bio">
+      <h5>{{book.author}}, {{book.year}}</h5>
+      <h5>Category: {{book.category}}</h5>
+      <p>{{book.description}}</p>
+      <app-button></app-button>
+    </div>
   </div>
 </div>
