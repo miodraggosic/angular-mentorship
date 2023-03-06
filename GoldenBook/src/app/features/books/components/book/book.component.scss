@@ -19,7 +19,6 @@
     display: grid;
     grid-template-columns: 4fr 5fr;
     column-gap: 4%;
-    font-size: 0.8vw;
   }
 
   img {
@@ -34,6 +33,24 @@
     p {
       max-height: 150px;
       overflow: hidden;
+    }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .book {
+    font-size: 1.2vw;
+    p {
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 658px) {
+  .book {
+    font-size: 2vw;
+    p {
+      height: auto;
     }
   }
 }

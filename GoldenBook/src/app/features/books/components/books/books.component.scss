@@ -28,3 +28,15 @@ h1 {
   row-gap: 2vw;
   column-gap: 2vw;
 }
+
+@media only screen and (max-width: 1250px) {
+  .books {
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 658px) {
+  .books {
+    grid-template: 1fr / 1fr;
+  }
+}

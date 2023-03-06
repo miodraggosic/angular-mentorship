@@ -9,3 +9,15 @@ button {
   border-radius: 4px;
   color: $white;
 }
+
+@media only screen and (max-width: 1250px) {
+  button {
+    font-size: 1.4vw;
+  }
+}
+
+@media only screen and (max-width: 658px) {
+  button {
+    font-size: 1.8vw;
+  }
+}
