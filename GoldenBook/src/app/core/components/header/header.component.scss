@@ -1,8 +1,13 @@
-@import url(../../../../styles/variables.scss);
+@import "../../../../styles/variables.scss";
+
 nav {
   display: flex;
   justify-content: space-between;
   padding: 1vw 0;
+  background-image: url(../../../../assets/images/backgrounds/headerBcgr.png);
+  color: $white;
+  font-family: $myFirstFont;
+  font-size: 1.6vw;
 
   div {
     display: flex;
@@ -13,6 +18,7 @@ nav {
   .burger-icon {
     background-image: url(../../../../assets/images/icons/hamburger.png);
     margin-inline-start: 2vw;
+    margin-inline-end: 2vw;
   }
   .avatar-icon {
     background-image: url(../../../../assets/images/icons/avatar.png);
@@ -22,8 +28,8 @@ nav {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    background-color: transparent;
     border: 0;
-    color: $white;
     width: 2vw;
     height: 100%;
   }
