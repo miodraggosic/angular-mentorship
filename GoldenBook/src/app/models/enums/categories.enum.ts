@@ -1,6 +1,6 @@
 export enum Categories {
-  general = 'general',
-  history = 'history',
-  fantasy = 'fantasy',
-  sciense = 'sciense',
+  general = 'General',
+  history = 'History',
+  fantasy = 'Fantasy',
+  sciense = 'Sciense',
 }
