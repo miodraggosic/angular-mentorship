@@ -1,0 +1,30 @@
+@import "../../../../../styles/variables.scss";
+:host {
+  display: block;
+  background-image: url(../../../../../assets/images/backgrounds/Golden_book.svg.png);
+  background-position: 6.47% 100%;
+  background-size: 58% 78%;
+  background-repeat: no-repeat;
+}
+.book-wrapper {
+  width: 88%;
+  margin: 1vh auto;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.2vw;
+  padding: 2vh 0;
+}
+
+.search-filter {
+  display: flex;
+  gap: 2vw;
+  justify-content: space-between;
+}
+.books {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  row-gap: 2vw;
+  column-gap: 2vw;
+}

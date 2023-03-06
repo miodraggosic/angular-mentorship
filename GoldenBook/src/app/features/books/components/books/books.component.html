@@ -1,10 +1,13 @@
-<div class="mainWrapper">
-  <p class="displayOutput">{{displayValue}}</p>
+<div class="book-wrapper">
   <div>
+    <h1>{{text}}</h1>
+    <p class="displayOutput">{{displayValue}}</p>
+  </div>
+  <div class="search-filter">
     <app-search (displayTerm)="showValue($event)"></app-search>
     <app-dropdown (displayCategory)="showValue($event)"></app-dropdown>
   </div>
-  <div>
+  <div class="books">
     <app-book [book]="books[0]"></app-book>
     <app-book [book]="books[1]"></app-book>
     <app-book [book]="books[2]"></app-book>
