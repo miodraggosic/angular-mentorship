@@ -1,16 +1,20 @@
-<div class="book-card">
-  <h4>{{book.title}}</h4>
-
-  <div class="book">
-    <div class="book-image">
-      <img [src]="book.imageUrl" alt="">
-    </div>
-
-    <div class="book-bio">
-      <h5>{{book.author}}, {{book.year}}</h5>
-      <h5>Category: {{book.category}}</h5>
-      <p>{{book.description}}</p>
-      <app-button></app-button>
-    </div>
-  </div>
-</div>
+<mat-card class="book-card">
+  <mat-card-content>
+    <mat-card-header>
+      <mat-card-title>
+        {{book.title}}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="book">
+      <img mat-card-image [src]="book.imageUrl" alt="">
+      <mat-card-content class="book-bio">
+        <h5>{{book.author}}, {{book.year}}</h5>
+        <p>Category: {{book.category}}</p>
+        <p>{{book.description}}</p>
+        <mat-card-actions>
+          <app-button></app-button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card-content>
+  </mat-card-content>
+</mat-card>

@@ -1,8 +1,6 @@
 @import "../../../../../styles/variables.scss";
 
 .book-card {
-  display: grid;
-  grid-template-rows: auto 1fr;
   color: $black;
   background-color: $white;
   border-radius: 4px;
@@ -10,15 +8,19 @@
   gap: 4%;
   align-items: center;
 
-  h4 {
+  .mat-card-title {
     font-size: 1.2vw;
     font-weight: 700;
+    margin-left: -16px;
   }
 
   .book {
-    display: grid;
-    grid-template-columns: 4fr 5fr;
+    display: flex;
     column-gap: 4%;
+  }
+
+  .mat-card-image {
+    margin: 0;
   }
 
   img {
@@ -28,11 +30,18 @@
   .book-bio {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 2%;
 
     p {
-      max-height: 150px;
+      max-height: 190px;
       overflow: hidden;
+      font-size: 1.2vh;
+    }
+
+    .mat-card-actions {
+      margin: 0;
+      padding-bottom: 0;
     }
   }
 }
@@ -46,7 +55,7 @@
   }
 }
 
-@media only screen and (max-width: 658px) {
+@media only screen and (max-width: 768px) {
   .book {
     font-size: 2vw;
     p {
