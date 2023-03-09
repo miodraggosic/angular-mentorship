@@ -1,0 +1,16 @@
+@import "../../../../../styles/variables.scss";
+:host {
+  flex: 1;
+}
+.full-width {
+  width: 100%;
+}
+.mat-select {
+  width: 100%;
+  border-radius: 4px 4px 0px 0px;
+  padding: 1vw;
+  background-color: $white;
+}
+.mat-select-value {
+  color: $black;
+}

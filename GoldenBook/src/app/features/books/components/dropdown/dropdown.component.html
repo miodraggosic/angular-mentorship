@@ -1,0 +1,8 @@
+<mat-form-field class="full-width">
+  <mat-label>Filter by Category</mat-label>
+  <mat-select (click)="selectedCategory($event)">
+    <mat-option *ngFor="let category of categoriesFilter" [value]="category">
+      {{category}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
