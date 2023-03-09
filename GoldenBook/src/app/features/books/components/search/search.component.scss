@@ -1,0 +1,21 @@
+@import "../../../../../styles/variables.scss";
+:host {
+  flex: 1;
+}
+
+.full-width {
+  width: 100%;
+
+  .mat-form-field-label {
+    color: $black;
+  }
+
+  .mat-input-element {
+    background-image: url(../../../../../assets/images/icons/search.png);
+    background-repeat: no-repeat;
+    background-position: 98%;
+    background-color: $white;
+    padding: 1vw 0;
+    border-radius: 4px 4px 0px 0px;
+  }
+}
