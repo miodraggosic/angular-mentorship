@@ -1,0 +1,44 @@
+:host {
+  flex: 1;
+
+  .mat-form-field::ng-deep {
+    font-family: $mySecondFont;
+
+    .mat-form-field-label-wrapper {
+      position: static;
+    }
+
+    .mat-form-field-label {
+      color: $black;
+      padding-left: 1vw;
+    }
+
+    .mat-form-field-underline {
+      display: none;
+    }
+
+    .mat-input-element {
+      background-image: url(../assets/images/icons/search.png);
+      background-repeat: no-repeat;
+      background-position: 98%;
+      background-color: $white;
+      color: $black;
+      padding: 1vw 0vw 1vw 1vw;
+      border-radius: 4px 4px 0px 0px;
+    }
+
+    .mat-select {
+      border-radius: 4px 4px 0px 0px;
+      padding: 1vw;
+      background-color: $white;
+
+      .mat-select-value {
+        color: $black;
+      }
+
+      .mat-select-panel {
+        background: $white;
+      }
+    }
+  }
+}
