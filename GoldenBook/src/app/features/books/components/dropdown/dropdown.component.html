@@ -1,8 +1,11 @@
-<mat-form-field class="full-width">
+<mat-form-field class="full-width form-field" floatLabel="never" color="accent">
   <mat-label>Filter by Category</mat-label>
-  <mat-select (click)="selectedCategory($event)">
+  <mat-select #option multiple>
     <mat-option *ngFor="let category of categoriesFilter" [value]="category">
       {{category}}
     </mat-option>
   </mat-select>
 </mat-form-field>
+<mat-chip-list>
+  <mat-chip *ngFor="let chip of option.value" [value]="chip">{{chip}}</mat-chip>
+</mat-chip-list>

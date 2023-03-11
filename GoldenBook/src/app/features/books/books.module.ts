@@ -9,7 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-
+import { MatChipsModule } from '@angular/material/chips';
 @NgModule({
   declarations: [
     BooksComponent,
@@ -24,6 +24,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatChipsModule,
   ],
   exports: [BooksComponent],
 })
