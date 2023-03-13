@@ -10,7 +10,7 @@ nav {
   font-family: $myFirstFont;
   font-size: 1.6vw;
 
-  div {
+  .icon-wrapper {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
