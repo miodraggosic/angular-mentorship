@@ -11,6 +11,7 @@
     .mat-form-field-label {
       color: $black;
       padding-left: 1vw;
+      font-size: 1.6vh;
     }
 
     .mat-form-field-underline {
@@ -34,10 +35,6 @@
 
       .mat-select-value {
         color: $black;
-      }
-
-      .mat-select-panel {
-        background: $white;
       }
     }
   }

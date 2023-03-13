@@ -1,4 +1,3 @@
-<mat-form-field class="full-width">
-  <mat-label>search by Book Name</mat-label>
-  <input matInput (keyup)="searchTerm($event)" (change)="onClick()">
+<mat-form-field class="full-width" color="primary" floatLabel="never">
+  <input matInput placeholder="Search by Book Name" (keyup)="searchTerm($event)" (change)="onClick()">
 </mat-form-field>
