@@ -1,25 +1,30 @@
 @import "../../../../styles/variables.scss";
 :host {
-  display: flex;
   color: $white;
-  justify-content: flex-end;
-  gap: 4%;
-  padding: 2vh 0;
-}
-select {
-  background-color: $white;
-}
-button {
-  width: 1vw;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: transparent;
-  border: none;
-}
 
-.previous {
-  background-image: url(../../../../assets/images/icons/left.png);
-}
-.next {
-  background-image: url(../../../../assets/images/icons/right.png);
+  .mat-paginator::ng-deep {
+    background: transparent;
+
+    .mat-paginator-container {
+      color: $white;
+
+      .mat-paginator-page-size-label {
+        margin: 0 28px;
+      }
+
+      .mat-paginator-page-size-select {
+        width: 42px;
+      }
+
+      .mat-icon-button,
+      .mat-select-value,
+      .mat-select-arrow {
+        color: $white;
+      }
+
+      .mat-icon-button.mat-button-disabled {
+        color: $gray;
+      }
+    }
+  }
 }
