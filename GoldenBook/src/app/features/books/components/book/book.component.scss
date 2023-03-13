@@ -1,65 +1,59 @@
 @import "../../../../../styles/variables.scss";
 
-.book-card {
-  color: $black;
-  background-color: $white;
-  border-radius: 4px;
-  padding: 4%;
-  gap: 4%;
-  align-items: center;
-
-  .mat-card-title {
-    font-size: 1.2vw;
-    font-weight: 700;
-    margin-left: -16px;
-  }
-
-  .book {
-    display: flex;
-    column-gap: 4%;
-  }
-
-  .mat-card-image {
-    margin: 0;
-  }
-
-  img {
+:host {
+  .book-card::ng-deep {
+    color: $black;
+    background-color: $white;
     border-radius: 4px;
-    width: 100%;
-  }
-  .book-bio {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 2%;
+    padding: 4%;
+    gap: 4%;
+    align-items: center;
 
-    p {
-      max-height: 190px;
-      overflow: hidden;
-      font-size: 1.2vh;
-    }
-
-    .mat-card-actions {
+    .mat-card-header-text {
       margin: 0;
-      padding-bottom: 0;
     }
-  }
-}
 
-@media only screen and (max-width: 1250px) {
-  .book {
-    font-size: 1.2vw;
-    p {
-      height: auto;
+    .mat-card-title h3 {
+      font-size: 1.8vh;
+      font-weight: 700;
     }
-  }
-}
 
-@media only screen and (max-width: 768px) {
-  .book {
-    font-size: 2vw;
-    p {
-      height: auto;
+    .book {
+      display: flex;
+      column-gap: 4%;
+    }
+
+    .mat-card-image {
+      margin: 0;
+      flex: 1;
+    }
+
+    img {
+      border-radius: 4px;
+      width: 100%;
+    }
+
+    .book-bio {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2%;
+
+      h5 {
+        font-size: 1.4vh;
+      }
+
+      p {
+        max-height: 190px;
+        overflow: hidden;
+        font-size: 1.2vh;
+      }
+
+      .mat-card-actions {
+        margin: 0;
+        padding-bottom: 0;
+      }
     }
   }
 }
