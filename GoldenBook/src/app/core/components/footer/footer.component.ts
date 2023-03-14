@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  text: string = 'Orion Inovation - ANGULAR WORKSHOP 2023';
+  text: string = 'Orion Inovation - ';
+  spanText: string = 'angular workshop 2023';
 
   constructor() {}
 
