@@ -10,12 +10,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
+import { TitleComponent } from './components/title/title.component';
 @NgModule({
   declarations: [
     BooksComponent,
     BookComponent,
     SearchComponent,
     DropdownComponent,
+    TitleComponent,
   ],
   imports: [
     CommonModule,

@@ -9,7 +9,6 @@ import { Book } from 'src/app/models/interfaces/book.interface';
 })
 export class BooksComponent implements OnInit {
   displayValue: string = '';
-  text: string = 'Homepage';
 
   books: Book[] = [
     {
