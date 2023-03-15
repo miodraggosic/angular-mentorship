@@ -5,8 +5,39 @@
   .mat-paginator::ng-deep {
     background: transparent;
 
+    // .mat-form-field-underline {
+    //   color: yellow;
+    // }
+
+    // .mat-option .mat-focus-indicator {
+    //   background: $white;
+    // }
+    // .mat-select-panel .mat-optgroup-label,
+    // .mat-select-panel .mat-option {
+    //   background: $white;
+    //   color: $white;
+    // }
+
     .mat-paginator-container {
       color: $white;
+
+      // .mat-primary .mat-option.mat-selected {
+      //   background: $white;
+      //   color: $white;
+      // }
+
+      // :host ::ng-deep {
+      //   .mat-form-field-underline {
+      //     color: $white;
+      //   }
+      //   .mat-option.mat-active {
+      //     color: aqua;
+      //   }
+      // }
+      // .mat-option-selected {
+      //   color: aqua;
+      //   background: $white;
+      // }
 
       .mat-paginator-page-size-label {
         margin: 0 28px;
