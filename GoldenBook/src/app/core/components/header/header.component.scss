@@ -6,6 +6,7 @@ nav {
   padding: 1vw 0;
   background-image: url(../../../../assets/images/backgrounds/headerBcgr.png);
   background-size: contain;
+  background-repeat: repeat-x;
   color: $white;
   font-family: $myFirstFont;
   font-size: 1.6vw;
@@ -16,8 +17,13 @@ nav {
     align-items: center;
     margin: 0 2vw;
 
-    h2 {
+    h1 {
+      font-size: 2.8vh;
       margin: 0 2vw;
+      a {
+        color: $white;
+        text-decoration: none;
+      }
     }
 
     .burger-icon {
@@ -34,7 +40,7 @@ nav {
       background-repeat: no-repeat;
       background-color: transparent;
       border: 0;
-      width: 2vw;
+      width: 2.6vh;
       height: 100%;
     }
   }
