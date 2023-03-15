@@ -1,5 +1,5 @@
 <mat-form-field class="full-width" floatLabel="never" color="primary">
-  <mat-select #option multiple placeholder="Filter by Category">
+  <mat-select #option multiple placeholder="Filter by Category" panelClass="app-color-select">
     <mat-option *ngFor="let category of categoriesFilter" [value]="category">
       {{category}}
     </mat-option>

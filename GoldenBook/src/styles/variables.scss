@@ -16,3 +16,20 @@ $mySecondFont: Karla;
 .full-width {
   width: 100%;
 }
+
+.app-color-select {
+  background: $white;
+
+  .mat-pseudo-checkbox {
+    color: $white;
+    border: 2px solid $black;
+  }
+
+  .mat-pseudo-checkbox-checked {
+    background: $gray;
+  }
+
+  .mat-option-text {
+    color: $black;
+  }
+}
