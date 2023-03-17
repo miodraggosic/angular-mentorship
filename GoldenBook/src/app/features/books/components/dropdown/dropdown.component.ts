@@ -7,10 +7,6 @@ import { Categories } from 'src/app/models/enums/categories.enum';
   styleUrls: ['./dropdown.component.scss'],
 })
 export class DropdownComponent implements OnInit {
-  @Output() displayCategory = new EventEmitter<string>();
-
-  categoryValue: string = '';
-
   categoriesFilter: Categories[] = [
     Categories.general,
     Categories.fantasy,
@@ -21,9 +17,4 @@ export class DropdownComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  selectedCategory(event: any): void {
-    this.categoryValue = event.target.value;
-    this.displayCategory.emit(this.categoryValue);
-  }
 }
