@@ -2,6 +2,11 @@
   .mat-form-field::ng-deep {
     font-family: $mySecondFont;
 
+    .mat-input-element,
+    .mat-select {
+      padding: 1.4vw 1vw;
+    }
+
     .mat-form-field-label-wrapper {
       position: static;
     }
@@ -10,6 +15,22 @@
       color: $black;
       padding-left: 1vw;
       font-size: 1.6vh;
+    }
+
+    .mat-form-field-flex {
+      align-items: center;
+      background-color: $white;
+      border-radius: 4px 4px 0px 0px;
+    }
+
+    .mat-form-field-infix {
+      padding: 0;
+      border: 0;
+    }
+
+    .mat-form-field-suffix {
+      font-size: 24px;
+      margin-left: 1vw;
     }
 
     .mat-form-field-underline {
@@ -22,26 +43,19 @@
   @include form-fields;
 
   .mat-input-element {
-    background-image: url(../assets/images/icons/search.png);
-    background-repeat: no-repeat;
-    background-position: 98%;
-    background-color: $white;
+    margin-top: 0;
     color: $black;
-    padding: 1vw 0vw 1vw 1vw;
-    border-radius: 4px 4px 0px 0px;
+  }
+
+  .mat-icon-button {
+    color: $black;
   }
 }
 
 @mixin form-select {
   @include form-fields;
 
-  .mat-select {
-    border-radius: 4px 4px 0px 0px;
-    padding: 1vw;
-    background-color: $white;
-
-    .mat-select-value {
-      color: $black;
-    }
+  .mat-select-value {
+    color: $black;
   }
 }

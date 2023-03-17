@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
     this.displayTerm.emit(this.term);
   }
 
-  searchTerm(event: any): void {
-    this.term = event.target.value;
+  searchTerm(event: Event): void {
+    this.term = (event.target as HTMLInputElement).value;
   }
 }
