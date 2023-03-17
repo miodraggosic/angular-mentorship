@@ -3,10 +3,8 @@
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 1vw 0;
-  background-image: url(../../../../assets/images/backgrounds/headerBcgr.png);
-  background-size: contain;
-  background-repeat: repeat-x;
+  padding: 2vh 0;
+  background: linear-gradient($gray, $black);
   color: $white;
   font-family: $myFirstFont;
   font-size: 1.6vw;
