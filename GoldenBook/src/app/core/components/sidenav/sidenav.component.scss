@@ -1,0 +1,20 @@
+@import "../../../../styles/variables.scss";
+
+:host {
+  display: block;
+  background-image: url(../../../../assets/images/backgrounds/Golden_book.svg.png);
+  background-position: 6.47% 100%;
+  background-size: 58% 78%;
+  background-repeat: no-repeat;
+
+  .mat-drawer-container,
+  .mat-drawer,
+  .mat-expansion-panel {
+    background-color: transparent;
+    color: $white;
+  }
+
+  .mat-list-base .mat-list-item {
+    color: $white;
+  }
+}

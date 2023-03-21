@@ -1,0 +1,38 @@
+<mat-sidenav-container class="main-wrapper">
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-nav-list>
+      <mat-list-item routerLink="#">
+        <mat-icon>home</mat-icon><span>Homepage</span>
+      </mat-list-item>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon>view_list</mat-icon> Categories
+        </mat-expansion-panel-header>
+
+        <mat-nav-list>
+          <a mat-list-item *ngFor="let category of categories" routerLink="#">
+            {{category}}
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon>admin_panel_settings</mat-icon> Admin
+        </mat-expansion-panel-header>
+
+        <mat-nav-list>
+          <a mat-list-item routerLink="#">Books</a>
+          <a mat-list-item routerLink="#">Categories</a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
