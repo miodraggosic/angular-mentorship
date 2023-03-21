@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Categories } from 'src/app/models/enums/categories.enum';
 import { Book } from 'src/app/models/interfaces/book.interface';
 
