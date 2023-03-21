@@ -24,22 +24,13 @@ nav {
       }
     }
 
-    .burger-icon {
-      background-image: url(../../../../assets/images/icons/hamburger.png);
-    }
-
-    .avatar-icon {
-      background-image: url(../../../../assets/images/icons/avatar.png);
-    }
-
     button {
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
       background-color: transparent;
       border: 0;
-      width: 2.6vh;
-      height: 100%;
+
+      .material-icons {
+        color: $white;
+      }
     }
   }
 }
