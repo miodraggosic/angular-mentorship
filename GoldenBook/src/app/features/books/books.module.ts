@@ -12,7 +12,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
-import { TitleComponent } from './components/title/title.component';
 import { BookOverviewComponent } from './components/book-overview/book-overview.component';
 import { BooksRoutingModule } from './books-routing.module';
 @NgModule({
@@ -21,7 +20,6 @@ import { BooksRoutingModule } from './books-routing.module';
     BookComponent,
     SearchComponent,
     DropdownComponent,
-    TitleComponent,
     BookOverviewComponent,
   ],
   imports: [
