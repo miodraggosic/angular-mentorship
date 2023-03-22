@@ -1,0 +1,21 @@
+<mat-card class="book-card">
+  <mat-card-content>
+    <mat-card-header>
+      <mat-card-title>
+        <h3>{{book.title}}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="book">
+      <img mat-card-image [src]="book.imageUrl" alt="Book Cover">
+      <div class="book-bio">
+        <p>BookId: #{{book.id}}</p>
+        <h5>{{book.author}}, {{book.year}}</h5>
+        <p>Category: {{book.category}}</p>
+        <p>{{book.description}}</p>
+        <mat-card-actions>
+          <app-button [text]="'Close'" routerLink=""></app-button>
+        </mat-card-actions>
+      </div>
+    </mat-card-content>
+  </mat-card-content>
+</mat-card>
