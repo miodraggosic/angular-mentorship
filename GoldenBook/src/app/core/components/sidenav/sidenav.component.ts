@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Categories } from 'src/app/models/enums/categories.enum';
 
 @Component({
@@ -7,6 +7,8 @@ import { Categories } from 'src/app/models/enums/categories.enum';
   styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent implements OnInit {
+  @Input() sidenavHandler!: boolean;
+
   categories: Categories[] = [
     Categories.general,
     Categories.fantasy,

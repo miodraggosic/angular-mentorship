@@ -1,5 +1,5 @@
 <mat-sidenav-container class="main-wrapper">
-  <mat-sidenav #sidenav mode="side" opened>
+  <mat-sidenav #sidenav mode="side" [opened]="sidenavHandler">
     <mat-nav-list>
       <mat-list-item routerLink="#">
         <mat-icon>home</mat-icon><span>Homepage</span>
