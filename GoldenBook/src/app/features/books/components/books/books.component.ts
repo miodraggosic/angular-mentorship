@@ -19,6 +19,7 @@ export class BooksComponent implements OnInit {
       category: Categories.general,
       description:
         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum?',
+      id: 1,
     },
     {
       imageUrl: '../../../assets/images/books/myFirstLover.png',
@@ -28,6 +29,7 @@ export class BooksComponent implements OnInit {
       category: Categories.general,
       description:
         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum?',
+      id: 2,
     },
     {
       imageUrl: '../../../assets/images/books/myLittleLife.png',
@@ -37,6 +39,7 @@ export class BooksComponent implements OnInit {
       category: Categories.general,
       description:
         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum?',
+      id: 3,
     },
     {
       imageUrl: '../../../assets/images/books/theLastTrip.png',
@@ -46,6 +49,7 @@ export class BooksComponent implements OnInit {
       category: Categories.fantasy,
       description:
         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum.',
+      id: 4,
     },
     {
       imageUrl: '../../../assets/images/books/dark.png',
@@ -55,6 +59,7 @@ export class BooksComponent implements OnInit {
       category: Categories.fantasy,
       description:
         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum.',
+      id: 5,
     },
     {
       imageUrl: '../../../assets/images/books/findMe.png',
@@ -64,6 +69,7 @@ export class BooksComponent implements OnInit {
       category: Categories.general,
       description:
         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum.',
+      id: 6,
     },
   ];
 
