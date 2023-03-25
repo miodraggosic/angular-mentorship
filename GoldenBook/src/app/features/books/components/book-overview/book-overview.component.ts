@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Categories } from 'src/app/models/enums/categories.enum';
 import { Book } from 'src/app/models/interfaces/book.interface';
 import { books } from 'src/app/models/mock-books';
 
