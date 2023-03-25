@@ -9,9 +9,14 @@
       <img mat-card-image [src]="book.imageUrl" alt="Book Cover">
       <div class="book-bio">
         <p>BookId: #{{book.id}}</p>
+
         <h5>{{book.author}}, {{book.year}}</h5>
+        <p>County: {{book.country}}</p>
         <p>Category: {{book.category}}</p>
+        <p>ISBN: {{book.isbn}}</p>
         <p>{{book.description}}</p>
+        <h5>{{book.reviewer}}</h5>
+        <p>{{book.comment}}</p>
         <mat-card-actions>
           <app-button [text]="'Close'" routerLink=""></app-button>
         </mat-card-actions>
