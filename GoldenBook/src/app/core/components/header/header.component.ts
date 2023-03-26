@@ -8,17 +8,17 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class HeaderComponent implements OnInit {
   text: string = 'Golden Book.';
 
-  @Output() handler = new EventEmitter<boolean>();
+  @Output() toggleSidenav = new EventEmitter<boolean>();
 
-  private toggleSidenav: boolean = false;
+  private visible: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
 
   onClick() {
-    this.toggleSidenav = !this.toggleSidenav;
+    this.visible = !this.visible;
 
-    this.handler.emit(this.toggleSidenav);
+    this.toggleSidenav.emit(this.visible);
   }
 }

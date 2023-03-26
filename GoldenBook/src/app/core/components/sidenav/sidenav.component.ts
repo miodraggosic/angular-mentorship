@@ -7,7 +7,7 @@ import { Categories } from 'src/app/models/enums/categories.enum';
   styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent implements OnInit {
-  @Input() sidenavHandler!: boolean;
+  @Input() isVisible!: boolean;
 
   categories: Categories[] = [
     Categories.general,
