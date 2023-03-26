@@ -10,20 +10,13 @@ import { books } from 'src/app/models/mock-books';
 })
 export class BookOverviewComponent implements OnInit {
   private books: Book[] = books;
-  book!: Book;
+
+  book?: Book | undefined;
 
   constructor(private ActiveteRouter: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.book = this.getBookId();
-  }
-
-  getBookId(): Book {
     const bookId = Number(this.ActiveteRouter.snapshot.paramMap.get('id'));
-    console.log(bookId);
-    const bookToRender: Book[] = this.books.filter(
-      (book) => book.id === bookId
-    );
-    return bookToRender[0];
+    this.book = this.books.find((book) => book.id === bookId);
   }
 }
