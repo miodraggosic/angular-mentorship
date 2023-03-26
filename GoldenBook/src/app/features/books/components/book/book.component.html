@@ -10,7 +10,7 @@
       <div class="book-bio">
         <h5>{{book.author}}, {{book.year}}</h5>
         <p>Category: {{book.category}}</p>
-        <p>{{book.description}}</p>
+        <p class="description">{{book.description}}</p>
         <mat-card-actions>
           <app-button [text]="'Book Overview'" routerLink="book/{{book.id}}"></app-button>
         </mat-card-actions>
