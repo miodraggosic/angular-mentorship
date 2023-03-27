@@ -5,12 +5,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'admin/books',
+    path: '',
+    redirectTo: 'books',
+    pathMatch: 'full',
+  },
+  {
+    path: 'books',
     component: AdminBooksComponent,
   },
 ];
 @NgModule({
   declarations: [],
   imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
 export class AdminRoutingModule {}
