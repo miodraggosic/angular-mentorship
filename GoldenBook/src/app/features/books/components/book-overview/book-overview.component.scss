@@ -1,20 +1,22 @@
 @import "../../../../../styles/variables.scss";
 
 :host {
+  .wrapper {
+    padding: 0 4%;
+  }
+
   .book-card::ng-deep {
     color: $black;
     background-color: $white;
     border-radius: 4px;
     padding: 4%;
-    gap: 4%;
-    align-items: center;
 
     .mat-card-header-text {
       margin: 0;
     }
 
     .mat-card-title h3 {
-      font-size: 1.8vh;
+      font-size: 2.2vh;
       font-weight: 700;
     }
 
@@ -41,17 +43,23 @@
       row-gap: 6px;
 
       h5 {
-        font-size: 1.4vh;
+        font-size: 1.8vh;
       }
 
       p {
-        font-size: 1.2vh;
+        font-size: 1.6vh;
       }
+    }
+  }
+  .mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding-bottom: 0;
 
-      .mat-card-actions {
-        margin: 0;
-        padding-bottom: 0;
-      }
+    .btn-big {
+      width: 30%;
+      padding: 1% 0;
     }
   }
 
