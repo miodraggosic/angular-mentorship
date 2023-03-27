@@ -6,6 +6,7 @@
   background-position: 6.47% 100%;
   background-size: 58% 78%;
   background-repeat: no-repeat;
+  height: -webkit-fill-available;
 
   .mat-drawer-container,
   .mat-drawer,
@@ -14,7 +15,63 @@
     color: $white;
   }
 
+  .mat-sidenav-container {
+    height: inherit;
+  }
+
+  .mat-sidenav::ng-deep {
+    width: 18%;
+    min-width: 220px;
+    font-family: $mySecondFont;
+    border-right: 1px solid $white;
+
+    .mat-nav-list {
+      width: 90%;
+      height: -webkit-fill-available;
+      background-color: rgba($color: $black, $alpha: 0.5);
+      overflow-y: hidden;
+
+      .mat-icon {
+        margin-right: 10px;
+      }
+
+      .mat-content {
+        align-items: center;
+      }
+
+      .mat-expansion-panel-header {
+        font-size: 1.8vh;
+        padding: 0 16px;
+      }
+      .mat-expansion-panel-body {
+        padding: 0;
+      }
+
+      .mat-expansion-panel-header.mat-expanded {
+        background: $gray;
+        border-right: 1px solid $white;
+      }
+
+      .mat-list-base {
+        padding-top: 0;
+        width: 100%;
+      }
+
+      .mat-nav-list a {
+        padding-left: 34px;
+      }
+      // .mat-nav-list .mat-list-item:hover .active {
+      //   background: none;
+
+      .mat-expansion-panel-header-description,
+      .mat-expansion-indicator::after {
+        color: $white;
+      }
+    }
+  }
+
   .mat-list-base .mat-list-item {
+    font-size: 1.8vh;
     color: $white;
   }
 }
