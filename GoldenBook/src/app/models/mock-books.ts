@@ -9,7 +9,7 @@ export const books: Book[] = [
     country: 'USA',
     isbn: 123465789,
     year: '1998',
-    category: Categories.general,
+    category: Categories.sciense,
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum?',
     reviewer: 'Nina Badzin',
@@ -84,7 +84,7 @@ export const books: Book[] = [
     country: 'USA',
     isbn: 123465789,
     year: '2021',
-    category: Categories.general,
+    category: Categories.history,
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum.',
     reviewer: 'Nina Badzin',
