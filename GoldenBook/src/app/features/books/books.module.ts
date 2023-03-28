@@ -14,6 +14,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
 import { BookOverviewComponent } from './components/book-overview/book-overview.component';
 import { BooksRoutingModule } from './books-routing.module';
+import { BookBackgroundDirective } from './directives/book-background.directive';
 @NgModule({
   declarations: [
     BooksComponent,
@@ -21,6 +22,7 @@ import { BooksRoutingModule } from './books-routing.module';
     SearchComponent,
     DropdownComponent,
     BookOverviewComponent,
+    BookBackgroundDirective,
   ],
   imports: [
     CommonModule,
