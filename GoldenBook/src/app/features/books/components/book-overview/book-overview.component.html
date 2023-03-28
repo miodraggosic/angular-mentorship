@@ -1,7 +1,7 @@
 <div class="wrapper">
   <ng-container *ngIf="book; else noBook">
     <app-title title="Book Overview - {{book.title}}"></app-title>
-    <mat-card class="book-card">
+    <mat-card class="book-card" appBookBackground [category]="book.category">
       <mat-card-content>
         <mat-card-header>
           <mat-card-title>
