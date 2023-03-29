@@ -13,10 +13,10 @@ export class BookOverviewComponent implements OnInit {
 
   book?: Book | undefined;
 
-  constructor(private ActiveteRouter: ActivatedRoute) {}
+  constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const bookId = Number(this.ActiveteRouter.snapshot.paramMap.get('id'));
+    const bookId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     this.book = this.books.find((book) => book.id === bookId);
   }
 }
