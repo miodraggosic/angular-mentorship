@@ -1,4 +1,3 @@
-import { BooksComponent } from './features/books/components/books/books.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
@@ -7,7 +6,8 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
 const routes: Routes = [
   {
     path: '',
-    component: BooksComponent,
+    loadChildren: () =>
+      import('./features/books/books.module').then((m) => m.BooksModule),
   },
   {
     path: 'admin',
