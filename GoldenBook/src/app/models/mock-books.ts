@@ -3,7 +3,7 @@ import { Book } from './interfaces/book.interface';
 
 export const books: Book[] = [
   {
-    imageUrl: '../../../../assets/images/books/moneyPower.png',
+    imageUrl: 'assets/images/books/moneyPower.png',
     title: 'Money Power',
     author: 'Name Surname',
     country: 'USA',
@@ -18,7 +18,7 @@ export const books: Book[] = [
     id: 1,
   },
   {
-    imageUrl: '../../../assets/images/books/myFirstLover.png',
+    imageUrl: 'assets/images/books/myFirstLover.png',
     title: 'My First Love',
     author: 'Name Surname',
     country: 'USA',
@@ -33,7 +33,7 @@ export const books: Book[] = [
     id: 2,
   },
   {
-    imageUrl: '../../../assets/images/books/myLittleLife.png',
+    imageUrl: 'assets/images/books/myLittleLife.png',
     title: 'My Little Life',
     author: 'Name Surname',
     country: 'USA',
@@ -48,7 +48,7 @@ export const books: Book[] = [
     id: 3,
   },
   {
-    imageUrl: '../../../assets/images/books/theLastTrip.png',
+    imageUrl: 'assets/images/books/theLastTrip.png',
     title: 'The Lost Trip',
     author: 'Name Surname',
     country: 'USA',
@@ -63,7 +63,7 @@ export const books: Book[] = [
     id: 4,
   },
   {
-    imageUrl: '../../../assets/images/books/dark.png',
+    imageUrl: 'assets/images/books/dark.png',
     title: 'Dark',
     author: 'Name Surname',
     country: 'USA',
@@ -78,7 +78,7 @@ export const books: Book[] = [
     id: 5,
   },
   {
-    imageUrl: '../../../assets/images/books/findMe.png',
+    imageUrl: 'assets/images/books/findMe.png',
     title: 'Find Me',
     author: 'Name Surname',
     country: 'USA',
