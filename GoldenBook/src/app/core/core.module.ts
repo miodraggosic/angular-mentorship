@@ -11,13 +11,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SharedModule } from '../shared/shared.module';
 
+const components = [
+  HeaderComponent,
+  FooterComponent,
+  SidenavComponent,
+  PageNotFoundComponent,
+];
+
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    FooterComponent,
-    SidenavComponent,
-    PageNotFoundComponent,
-  ],
+  declarations: components,
   imports: [
     CommonModule,
     MatSidenavModule,
@@ -28,11 +30,6 @@ import { SharedModule } from '../shared/shared.module';
     MatIconModule,
     SharedModule,
   ],
-  exports: [
-    HeaderComponent,
-    FooterComponent,
-    SidenavComponent,
-    PageNotFoundComponent,
-  ],
+  exports: components,
 })
 export class CoreModule {}
