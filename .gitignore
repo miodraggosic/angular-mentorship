@@ -37,6 +37,7 @@ testem.log
 /typings
 HelloWorld
 GoldenBook
+Angular-RXJS
 
 # System files
 .DS_Store
