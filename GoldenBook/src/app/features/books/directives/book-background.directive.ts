@@ -11,14 +11,14 @@ export class BookBackgroundDirective implements OnInit {
 
   ngOnInit(): void {
     switch (this.category) {
-      case Categories.history:
+      case Categories.History:
         this.elementRef.nativeElement.style.backgroundColor = 'white';
         break;
-      case Categories.fantasy:
+      case Categories.Fantasy:
         this.elementRef.nativeElement.style.backgroundColor = 'pink';
         this.elementRef.nativeElement.style.color = 'white';
         break;
-      case Categories.sciense:
+      case Categories.Sciense:
         this.elementRef.nativeElement.style.backgroundColor = 'green';
         this.elementRef.nativeElement.style.color = 'yellow';
         break;

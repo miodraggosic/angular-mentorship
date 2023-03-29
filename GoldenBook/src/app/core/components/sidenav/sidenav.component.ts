@@ -10,10 +10,10 @@ export class SidenavComponent implements OnInit {
   @Input() isVisible!: boolean;
 
   categories: Categories[] = [
-    Categories.general,
-    Categories.fantasy,
-    Categories.history,
-    Categories.sciense,
+    Categories.General,
+    Categories.Fantasy,
+    Categories.History,
+    Categories.Sciense,
   ];
 
   constructor() {}

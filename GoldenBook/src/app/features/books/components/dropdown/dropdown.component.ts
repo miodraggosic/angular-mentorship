@@ -8,10 +8,10 @@ import { Categories } from 'src/app/models/enums/categories.enum';
 })
 export class DropdownComponent implements OnInit {
   categoriesFilter: Categories[] = [
-    Categories.general,
-    Categories.fantasy,
-    Categories.history,
-    Categories.sciense,
+    Categories.General,
+    Categories.Fantasy,
+    Categories.History,
+    Categories.Sciense,
   ];
 
   constructor() {}
