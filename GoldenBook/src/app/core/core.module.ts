@@ -1,17 +1,19 @@
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
+
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { SharedModule } from '../shared/shared.module';
 
-const components = [
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+
+const COMPONENTS = [
   HeaderComponent,
   FooterComponent,
   SidenavComponent,
@@ -19,7 +21,7 @@ const components = [
 ];
 
 @NgModule({
-  declarations: components,
+  declarations: COMPONENTS,
   imports: [
     CommonModule,
     MatSidenavModule,
@@ -30,6 +32,6 @@ const components = [
     MatIconModule,
     SharedModule,
   ],
-  exports: components,
+  exports: COMPONENTS,
 })
 export class CoreModule {}
