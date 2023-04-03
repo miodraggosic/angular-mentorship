@@ -1,9 +1,17 @@
-<button (click)="ngOnDestroy()"> Destroy interval</button>
+<button (click)="stopInterval()"> Stop Interval</button>
 <hr>
 
 <input type="text" id="input-search1" placeholder="task 2 - search">
 <hr>
-<input type="text" id="input-search2" placeholder="task 3 - search1">
+<input type="text" id="input-search2" placeholder="task 3 - search">
 <br>
-<input type="text" id="input-search3" placeholder="task 3 - search2">
+<input type="text" id="input-search3" placeholder="task 3 - search">
 <hr>
+<input type="number" id="input-search4" placeholder="task 5 - search">
+<br>
+<input type="number" id="input-search5" placeholder="task 5 - search">
+<hr>
+<button (click)="startTimer()">Start Timer</button>
+<button (click)="stopTimer()">Stop Timer</button>
+<br>
+{{count}}
