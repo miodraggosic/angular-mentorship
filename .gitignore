@@ -36,6 +36,7 @@ package-lock.json
 testem.log
 /typings
 HelloWorld
+Angular-RXJS
 
 
 # System files
