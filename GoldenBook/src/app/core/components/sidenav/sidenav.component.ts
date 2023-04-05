@@ -1,4 +1,6 @@
+import { Subject, takeUntil } from 'rxjs';
 import { Component, Input, OnInit } from '@angular/core';
+import { CategoriesService } from 'src/app/features/books/services/categories.service';
 import { Categories } from 'src/app/models/enums/categories.enum';
 
 @Component({
@@ -9,14 +11,29 @@ import { Categories } from 'src/app/models/enums/categories.enum';
 export class SidenavComponent implements OnInit {
   @Input() isVisible!: boolean;
 
-  categories: Categories[] = [
-    Categories.General,
-    Categories.Fantasy,
-    Categories.History,
-    Categories.Sciense,
-  ];
+  categories: Categories[] = [];
 
-  constructor() {}
+  unsubscribe$: Subject<void> = new Subject();
 
-  ngOnInit(): void {}
+  constructor(private categoriesService: CategoriesService) {}
+
+  ngOnInit(): void {
+    this.getCategories();
+  }
+
+  getCategories() {
+    this.categoriesService
+      .getAll()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((data: Categories[]) => (this.categories = data));
+  }
+
+  unsubscribeAll() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
+  ngOnDestroy() {
+    this.unsubscribeAll();
+  }
 }

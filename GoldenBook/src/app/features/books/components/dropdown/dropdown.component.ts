@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
+import { CategoriesService } from './../../services/categories.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Categories } from 'src/app/models/enums/categories.enum';
 
 @Component({
@@ -6,15 +8,30 @@ import { Categories } from 'src/app/models/enums/categories.enum';
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss'],
 })
-export class DropdownComponent implements OnInit {
-  categoriesFilter: Categories[] = [
-    Categories.General,
-    Categories.Fantasy,
-    Categories.History,
-    Categories.Sciense,
-  ];
+export class DropdownComponent implements OnInit, OnDestroy {
+  categoriesFilter: Categories[] = [];
 
-  constructor() {}
+  unsubscribe$: Subject<void> = new Subject();
 
-  ngOnInit(): void {}
+  constructor(private categoriesService: CategoriesService) {}
+
+  ngOnInit(): void {
+    this.getCategories();
+  }
+
+  getCategories() {
+    this.categoriesService
+      .getAll()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((data: Categories[]) => (this.categoriesFilter = data));
+  }
+
+  unsubscribeAll() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
+  ngOnDestroy() {
+    this.unsubscribeAll();
+  }
 }
