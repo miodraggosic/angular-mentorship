@@ -1,22 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from 'src/app/models/interfaces/book.interface';
-import { books } from 'src/app/models/mock-books';
+import { BooksService } from '../../services/books.service';
 
 @Component({
   selector: 'app-book-overview',
   templateUrl: './book-overview.component.html',
   styleUrls: ['./book-overview.component.scss'],
 })
-export class BookOverviewComponent implements OnInit {
-  private books: Book[] = books;
-
+export class BookOverviewComponent implements OnInit, OnDestroy {
   book?: Book | undefined;
+  unsubscribe$: Subject<void> = new Subject();
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private booksService: BooksService
+  ) {}
 
   ngOnInit(): void {
-    const bookId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.book = this.books.find((book) => book.id === bookId);
+    const bookId: number = Number(
+      this.activatedRoute.snapshot.paramMap.get('id')
+    );
+    this.booksService
+      .getById(bookId)
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((book) => (this.book = book));
+  }
+
+  unsubscribeAll() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
+  ngOnDestroy() {
+    this.unsubscribeAll();
   }
 }
