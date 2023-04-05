@@ -7,10 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'GoldenBook';
-
-  toggleValue!: boolean;
-
-  toggleValueChange(event: boolean): void {
-    this.toggleValue = event;
-  }
 }

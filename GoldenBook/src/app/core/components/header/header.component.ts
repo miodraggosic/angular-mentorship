@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SidenavService } from '../../services/sidenav.service';
 
 @Component({
   selector: 'app-header',
@@ -8,17 +9,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class HeaderComponent implements OnInit {
   text: string = 'Golden Book.';
 
-  @Output() toggleSidenav = new EventEmitter<boolean>();
-
   private visible: boolean = false;
 
-  constructor() {}
+  constructor(private sidenavService: SidenavService) {}
 
   ngOnInit(): void {}
 
-  onClick() {
+  onClick(): void {
     this.visible = !this.visible;
-
-    this.toggleSidenav.emit(this.visible);
+    this.sidenavService.toggleSidenav$.next(this.visible);
   }
 }
