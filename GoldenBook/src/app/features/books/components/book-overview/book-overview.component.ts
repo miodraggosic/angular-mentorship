@@ -11,7 +11,7 @@ import { BooksService } from '../../services/books.service';
 })
 export class BookOverviewComponent implements OnInit, OnDestroy {
   book?: Book | undefined;
-  unsubscribe$: Subject<void> = new Subject();
+  private unsubscribe$: Subject<void> = new Subject();
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -19,6 +19,10 @@ export class BookOverviewComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.getBookById();
+  }
+
+  getBookById() {
     const bookId: number = Number(
       this.activatedRoute.snapshot.paramMap.get('id')
     );
