@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class SidenavService {
-  toggleSidenav$: Subject<boolean> = new Subject();
+  toggleSidenav$: Subject<boolean> = new Subject<boolean>();
 
   constructor() {}
 }
