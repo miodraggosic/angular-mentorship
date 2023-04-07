@@ -11,6 +11,7 @@ import { BooksService } from '../../services/books.service';
 })
 export class BookOverviewComponent implements OnInit, OnDestroy {
   book?: Book | undefined;
+
   private unsubscribe$: Subject<void> = new Subject();
 
   constructor(
@@ -22,22 +23,25 @@ export class BookOverviewComponent implements OnInit, OnDestroy {
     this.getBookById();
   }
 
-  getBookById() {
-    const bookId: number = Number(
-      this.activatedRoute.snapshot.paramMap.get('id')
-    );
+  ngOnDestroy() {
+    this.unsubscribeAll();
+  }
+
+  private getBookById(): void {
+    const bookId: number = this.getRouteId();
+
     this.booksService
       .getById(bookId)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((book) => (this.book = book));
   }
 
-  unsubscribeAll() {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
+  private getRouteId(): number {
+    return Number(this.activatedRoute.snapshot.paramMap.get('id'));
   }
 
-  ngOnDestroy() {
-    this.unsubscribeAll();
+  private unsubscribeAll(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 }
