@@ -9,9 +9,9 @@ import { Categories } from 'src/app/models/enums/categories.enum';
   styleUrls: ['./dropdown.component.scss'],
 })
 export class DropdownComponent implements OnInit, OnDestroy {
-  categoriesFilter: Categories[] = [];
+  categories: Categories[] = [];
 
-  unsubscribe$: Subject<void> = new Subject();
+  private unsubscribe$: Subject<void> = new Subject();
 
   constructor(private categoriesService: CategoriesService) {}
 
@@ -19,19 +19,19 @@ export class DropdownComponent implements OnInit, OnDestroy {
     this.getCategories();
   }
 
-  getCategories() {
+  ngOnDestroy(): void {
+    this.unsubscribeAll();
+  }
+
+  private getCategories(): void {
     this.categoriesService
       .getAll()
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((data: Categories[]) => (this.categoriesFilter = data));
+      .subscribe((data: Categories[]) => (this.categories = data));
   }
 
-  unsubscribeAll() {
+  private unsubscribeAll(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
-  }
-
-  ngOnDestroy() {
-    this.unsubscribeAll();
   }
 }
