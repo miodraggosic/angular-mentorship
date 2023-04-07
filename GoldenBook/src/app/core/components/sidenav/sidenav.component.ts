@@ -1,6 +1,6 @@
 import { Subject, takeUntil } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { CategoriesService } from 'src/app/features/books/services/categories.service';
+import { CategoriesService } from 'src/app/shared/services/categories.service';
 import { Categories } from 'src/app/models/enums/categories.enum';
 import { SidenavService } from '../../services/sidenav.service';
 

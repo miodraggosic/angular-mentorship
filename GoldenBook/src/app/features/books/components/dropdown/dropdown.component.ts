@@ -1,5 +1,5 @@
 import { Subject, takeUntil } from 'rxjs';
-import { CategoriesService } from './../../services/categories.service';
+import { CategoriesService } from '../../../../shared/services/categories.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Categories } from 'src/app/models/enums/categories.enum';
 

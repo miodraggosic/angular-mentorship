@@ -1,5 +1,5 @@
-import { Categories } from './enums/categories.enum';
-import { Book } from './interfaces/book.interface';
+import { Categories } from '../models/enums/categories.enum';
+import { Book } from '../models/interfaces/book.interface';
 
 export const books: Book[] = [
   {

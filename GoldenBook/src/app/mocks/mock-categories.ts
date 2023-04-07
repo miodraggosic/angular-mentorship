@@ -1,4 +1,4 @@
-import { Categories } from './enums/categories.enum';
+import { Categories } from '../models/enums/categories.enum';
 
 export const categories: Categories[] = [
   Categories.General,
