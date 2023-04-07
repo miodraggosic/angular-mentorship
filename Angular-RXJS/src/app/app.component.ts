@@ -166,7 +166,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.timerSubscription$.complete();
   }
 
-  unsubscribe() {
+  private unsubscribe() {
     this.unsuscribe$.next(true);
     this.unsuscribe$.complete();
   }
