@@ -14,7 +14,7 @@ export class SidenavComponent implements OnInit {
 
   categories: Categories[] = [];
 
-  unsubscribe$: Subject<void> = new Subject();
+  private unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(
     private categoriesService: CategoriesService,
@@ -26,26 +26,26 @@ export class SidenavComponent implements OnInit {
     this.toggleVisible();
   }
 
-  getCategories(): void {
+  ngOnDestroy(): void {
+    this.unsubscribeAll();
+  }
+
+  private getCategories(): void {
     this.categoriesService
       .getAll()
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((data: Categories[]) => (this.categories = data));
   }
 
-  toggleVisible(): void {
+  private toggleVisible(): void {
     this.sidenavService.toggleSidenav$
       .asObservable()
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((value) => (this.isVisible = value));
   }
 
-  unsubscribeAll(): void {
+  private unsubscribeAll(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
-  }
-
-  ngOnDestroy(): void {
-    this.unsubscribeAll();
   }
 }
