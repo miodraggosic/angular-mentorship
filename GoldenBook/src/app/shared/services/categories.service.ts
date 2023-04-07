@@ -1,7 +1,8 @@
 import { Categories } from 'src/app/models/enums/categories.enum';
-import { categories } from 'src/app/mocks/mock-categories';
+
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { categories } from '@mocks/mock-categories';
 
 @Injectable({
   providedIn: 'root',
