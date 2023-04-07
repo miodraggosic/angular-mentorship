@@ -12,7 +12,7 @@ export class BooksComponent implements OnInit, OnDestroy {
   displayValue: string = '';
   books: Book[] = [];
 
-  unsubscribe$: Subject<void> = new Subject();
+  private unsubscribe$: Subject<void> = new Subject();
 
   constructor(private booksService: BooksService) {}
 
@@ -20,23 +20,23 @@ export class BooksComponent implements OnInit, OnDestroy {
     this.getBooks();
   }
 
-  showValue(event: string) {
+  ngOnDestroy(): void {
+    this.unsubscribeAll();
+  }
+
+  showValue(event: string): void {
     this.displayValue = event;
   }
 
-  getBooks() {
+  private getBooks(): void {
     this.booksService
       .getAll()
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((data: Book[]) => (this.books = data));
   }
 
-  unsubscribeAll() {
+  private unsubscribeAll(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
-  }
-
-  ngOnDestroy() {
-    this.unsubscribeAll();
   }
 }
