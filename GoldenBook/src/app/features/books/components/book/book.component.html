@@ -12,7 +12,7 @@
         <p>Category: {{book.category}}</p>
         <p class="description">{{book.description}}</p>
         <mat-card-actions>
-          <app-button [text]="'Book Overview'" [routerLink]="['book', book.id]"></app-button>
+          <app-button [text]="'Book Overview'" [isBig]="false" [routerLink]="['book', book.id]"></app-button>
         </mat-card-actions>
       </div>
     </mat-card-content>

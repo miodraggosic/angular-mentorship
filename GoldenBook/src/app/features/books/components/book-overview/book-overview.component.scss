@@ -52,15 +52,8 @@
     }
   }
   .mat-card-actions {
-    display: flex;
-    justify-content: flex-end;
-    margin: 0;
+    margin: 1rem 0 0;
     padding-bottom: 0;
-
-    .btn-big {
-      width: 30%;
-      padding: 1% 0;
-    }
   }
 
   @media only screen and (max-width: 768px) {
