@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable, of, map } from 'rxjs';
 import { Book } from 'src/app/models/interfaces/book.interface';
 import { books } from '@mocks/mock-books';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '@env';
 
 @Injectable({
   providedIn: 'root',
@@ -9,10 +11,12 @@ import { books } from '@mocks/mock-books';
 export class BooksService {
   private books: Book[] = books;
 
-  constructor() {}
+  constructor(private httpClientService: HttpClient) {}
 
   getAll(): Observable<Book[]> {
-    return of(books);
+    return this.httpClientService
+      .get<Book[]>(`${environment.baseApiUrl}books?deletedAt=null`)
+      .pipe(map((data) => data));
   }
 
   getById(id: number): Observable<Book | undefined> {
