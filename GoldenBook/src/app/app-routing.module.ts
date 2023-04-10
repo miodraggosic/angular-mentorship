@@ -6,6 +6,11 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'books',
+    pathMatch: 'full',
+  },
+  {
+    path: 'books',
     loadChildren: () =>
       import('./features/books/books.module').then((m) => m.BooksModule),
   },
