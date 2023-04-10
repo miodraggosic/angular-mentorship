@@ -11,6 +11,7 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum?",
       "reviewer": "Nina Badzin",
       "comment": "Fantastic book! I absolutely loved this essay collection. Guess I’m into collections right now. I had to read it with a tissue in my hand because in many parts I would tear up from trying to hold in my laughter.",
+      "deletedAt": "null",
       "id": 1
     },
     {
@@ -24,6 +25,7 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum?",
       "reviewer": "Nina Badzin",
       "comment": "Fantastic book! I absolutely loved this essay collection. Guess I’m into collections right now. I had to read it with a tissue in my hand because in many parts I would tear up from trying to hold in my laughter.",
+      "deletedAt": "null",
       "id": 2
     },
     {
@@ -37,6 +39,7 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum?",
       "reviewer": "Nina Badzin",
       "comment": "Fantastic book! I absolutely loved this essay collection. Guess I’m into collections right now. I had to read it with a tissue in my hand because in many parts I would tear up from trying to hold in my laughter.",
+      "deletedAt": "null",
       "id": 3
     },
     {
@@ -50,6 +53,7 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum.",
       "reviewer": "Nina Badzin",
       "comment": "Fantastic book! I absolutely loved this essay collection. Guess I’m into collections right now. I had to read it with a tissue in my hand because in many parts I would tear up from trying to hold in my laughter.",
+      "deletedAt": "null",
       "id": 4
     },
     {
@@ -63,6 +67,7 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum.",
       "reviewer": "Nina Badzin",
       "comment": "Fantastic book! I absolutely loved this essay collection. Guess I’m into collections right now. I had to read it with a tissue in my hand because in many parts I would tear up from trying to hold in my laughter.",
+      "deletedAt": "null",
       "id": 5
     },
     {
@@ -76,6 +81,7 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam iure facere molestiae ducimus commodi dignissimos corrupti accusantium deserunt minima enim dicta assumenda sapiente quam, dolorum eum ipsa voluptatem sed, consequatur eligendi perspiciatis, non soluta? Eum sequi, ab cupiditate omnis, animi doloremque amet modi natus rem, aperiam tempore laborum ipsa voluptatum.",
       "reviewer": "Nina Badzin",
       "comment": "Fantastic book! I absolutely loved this essay collection. Guess I’m into collections right now. I had to read it with a tissue in my hand because in many parts I would tear up from trying to hold in my laughter.",
+      "deletedAt": "null",
       "id": 6
     }
   ],
