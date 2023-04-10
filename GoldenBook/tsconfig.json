@@ -21,7 +21,8 @@
     "lib": ["es2020", "dom"],
     "paths": {
       "@mocks/*": ["src/app/mocks/*"],
-      "@shared/*": ["src/app/shared/*"]
+      "@shared/*": ["src/app/shared/*"],
+      "@env": ["src/environments/environment"]
     }
   },
   "angularCompilerOptions": {
