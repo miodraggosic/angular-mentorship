@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, switchMap, take, takeUntil } from 'rxjs';
 import { Book } from 'src/app/models/interfaces/book.interface';
 import { BooksService } from '../../services/books.service';
 
@@ -28,10 +28,20 @@ export class BooksComponent implements OnInit, OnDestroy {
     this.displayValue = event;
   }
 
+  deleteBook(book: Book): void {
+    this.booksService
+      .delete(book.id)
+      .pipe(
+        takeUntil(this.unsubscribe$),
+        switchMap(() => this.booksService.getAll())
+      )
+      .subscribe((data: Book[]) => (this.books = data));
+  }
+
   private getBooks(): void {
     this.booksService
       .getAll()
-      .pipe(takeUntil(this.unsubscribe$))
+      .pipe(take(1))
       .subscribe((data: Book[]) => (this.books = data));
   }
 
