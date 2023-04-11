@@ -19,6 +19,12 @@ export class BooksService {
       .pipe(map((data) => data));
   }
 
+  delete(id: number): Observable<{}> {
+    return this.httpClientService.delete(
+      `${environment.baseApiUrl}books/${id}`
+    );
+  }
+
   getById(id: number): Observable<Book | undefined> {
     const book = of(this.books).pipe(
       map((books) => books.find((book) => book.id === id))
