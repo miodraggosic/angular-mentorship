@@ -13,6 +13,7 @@
         <p class="description">{{book.description}}</p>
         <mat-card-actions>
           <app-button [text]="'Book Overview'" [isBig]="false" [routerLink]="['book', book.id]"></app-button>
+          <app-button [text]="'Delete'" [isBig]="false" (click)="onDelete()"></app-button>
         </mat-card-actions>
       </div>
     </mat-card-content>
