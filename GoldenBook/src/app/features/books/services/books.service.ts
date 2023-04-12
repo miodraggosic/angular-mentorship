@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, map, catchError, retry } from 'rxjs';
+import { Observable, of, catchError, retry } from 'rxjs';
 import { Book } from 'src/app/models/interfaces/book.interface';
 import { books } from '@mocks/mock-books';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -9,7 +9,7 @@ import { environment } from '@env';
   providedIn: 'root',
 })
 export class BooksService {
-  private books: Book[] = books;
+  // private books: Book[] = books;
 
   private booksUrl: string = `${environment.baseApiUrl}books`;
 
@@ -22,11 +22,7 @@ export class BooksService {
   getAll(): Observable<Book[]> {
     return this.httpClientService
       .get<Book[]>(`${this.booksUrl}?deletedAt=null`)
-      .pipe(
-        map((data) => data),
-        retry(2),
-        catchError(this.handleError('Get books', []))
-      );
+      .pipe(retry(2), catchError(this.handleError('Get books', [])));
   }
 
   delete(id: number): Observable<any> {
@@ -36,10 +32,9 @@ export class BooksService {
   }
 
   getById(id: number): Observable<Book | undefined> {
-    const book = of(this.books).pipe(
-      map((books) => books.find((book) => book.id === id))
-    );
-    return book;
+    return this.httpClientService
+      .get<Book>(`${this.booksUrl}/${id}`)
+      .pipe(catchError(this.handleError<Book>('Get Book')));
   }
 
   softDelete(id: number): Observable<any> {
