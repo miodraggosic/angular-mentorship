@@ -10,7 +10,8 @@
   </form>
 
   <div class="books">
-    <app-book *ngFor="let book of books" [book]="book" (delete)="deleteBook(book)"></app-book>
+    <app-book *ngFor="let book of books" [book]="book" (delete)="deleteBook(book)"
+      (softDelete)="softDeleteBook(book)"></app-book>
   </div>
   <app-pagination></app-pagination>
 </div>

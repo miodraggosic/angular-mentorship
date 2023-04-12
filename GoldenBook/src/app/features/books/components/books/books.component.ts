@@ -38,6 +38,18 @@ export class BooksComponent implements OnInit, OnDestroy {
       .subscribe((data: Book[]) => (this.books = data));
   }
 
+  softDeleteBook(book: Book): void {
+    this.booksService
+      .softDelete(book.id)
+      .pipe(
+        takeUntil(this.unsubscribe$),
+        switchMap(() => this.booksService.getAll())
+      )
+      .subscribe((data: Book[]) => {
+        this.books = data;
+      });
+  }
+
   private getBooks(): void {
     this.booksService
       .getAll()
