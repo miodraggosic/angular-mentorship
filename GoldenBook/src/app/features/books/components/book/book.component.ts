@@ -9,8 +9,13 @@ import { Book } from 'src/app/models/interfaces/book.interface';
 export class BookComponent {
   @Input() book!: Book;
   @Output() delete = new EventEmitter();
+  @Output() softDelete = new EventEmitter();
 
   onDelete(): void {
     this.delete.emit();
+  }
+
+  onSoftDelete() {
+    this.softDelete.emit();
   }
 }
