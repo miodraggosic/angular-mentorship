@@ -1,18 +1,21 @@
-import { Categories } from 'src/app/models/enums/categories.enum';
-
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { categories } from '@mocks/mock-categories';
+import { Observable, map } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '@env';
+import { Category } from 'src/app/models/interfaces/category.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CategoriesService {
-  private categories: Categories[] = categories;
+  // private categories: Categories[] = categories;
+  private categoriesUrl: string = `${environment.baseApiUrl}categories`;
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getAll(): Observable<Categories[]> {
-    return of(this.categories);
+  getAll(): Observable<any> {
+    return this.http
+      .get<Category[]>(this.categoriesUrl)
+      .pipe(map((categories) => categories.map((category) => category.name)));
   }
 }

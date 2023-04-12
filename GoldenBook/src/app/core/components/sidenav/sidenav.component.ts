@@ -1,8 +1,8 @@
 import { Subject, takeUntil } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { CategoriesService } from '@shared/services/categories.service';
-import { Categories } from 'src/app/models/enums/categories.enum';
 import { SidenavService } from '../../services/sidenav.service';
+import { Category } from 'src/app/models/interfaces/category.interface';
 
 @Component({
   selector: 'app-sidenav',
@@ -12,7 +12,7 @@ import { SidenavService } from '../../services/sidenav.service';
 export class SidenavComponent implements OnInit {
   isVisible: boolean = false;
 
-  categories: Categories[] = [];
+  categories: Category[] = [];
 
   private unsubscribe$: Subject<void> = new Subject<void>();
 
@@ -34,7 +34,9 @@ export class SidenavComponent implements OnInit {
     this.categoriesService
       .getAll()
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((data: Categories[]) => (this.categories = data));
+      .subscribe((data: Category[]) => {
+        this.categories = data;
+      });
   }
 
   private toggleVisible(): void {
