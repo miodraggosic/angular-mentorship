@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, map, shareReplay } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@env';
 import { Category } from 'src/app/models/interfaces/category.interface';
@@ -10,11 +10,18 @@ import { Category } from 'src/app/models/interfaces/category.interface';
 export class CategoriesService {
   private readonly categoriesUrl: string = `${environment.baseApiUrl}categories`;
 
+  private categories$!: Observable<Category[]>;
+
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<any> {
-    return this.http
-      .get<Category[]>(this.categoriesUrl)
-      .pipe(map((categories) => categories.map((category) => category.name)));
+    if (!this.categories$) {
+      this.categories$ = this.http
+        .get<Category[]>(this.categoriesUrl)
+        .pipe(shareReplay());
+    }
+    return this.categories$.pipe(
+      map((categories) => categories.map((category) => category.name))
+    );
   }
 }
