@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject, switchMap, take, takeUntil } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { switchMap, take } from 'rxjs';
 import { Book } from 'src/app/models/interfaces/book.interface';
 import { BooksService } from '../../services/books.service';
 
@@ -8,20 +8,14 @@ import { BooksService } from '../../services/books.service';
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.scss'],
 })
-export class BooksComponent implements OnInit, OnDestroy {
+export class BooksComponent implements OnInit {
   displayValue: string = '';
   books: Book[] = [];
-
-  private unsubscribe$: Subject<void> = new Subject();
 
   constructor(private booksService: BooksService) {}
 
   ngOnInit(): void {
     this.getBooks();
-  }
-
-  ngOnDestroy(): void {
-    this.unsubscribeAll();
   }
 
   showValue(event: string): void {
@@ -32,7 +26,7 @@ export class BooksComponent implements OnInit, OnDestroy {
     this.booksService
       .delete(book.id)
       .pipe(
-        takeUntil(this.unsubscribe$),
+        take(1),
         switchMap(() => this.booksService.getAll())
       )
       .subscribe((data: Book[]) => (this.books = data));
@@ -42,7 +36,7 @@ export class BooksComponent implements OnInit, OnDestroy {
     this.booksService
       .softDelete(book.id)
       .pipe(
-        takeUntil(this.unsubscribe$),
+        take(1),
         switchMap(() => this.booksService.getAll())
       )
       .subscribe((data: Book[]) => {
@@ -55,10 +49,5 @@ export class BooksComponent implements OnInit, OnDestroy {
       .getAll()
       .pipe(take(1))
       .subscribe((data: Book[]) => (this.books = data));
-  }
-
-  private unsubscribeAll(): void {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
   }
 }
