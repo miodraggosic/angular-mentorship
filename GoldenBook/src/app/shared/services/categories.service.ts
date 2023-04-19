@@ -8,8 +8,7 @@ import { Category } from 'src/app/models/interfaces/category.interface';
   providedIn: 'root',
 })
 export class CategoriesService {
-  // private categories: Categories[] = categories;
-  private categoriesUrl: string = `${environment.baseApiUrl}categories`;
+  private readonly categoriesUrl: string = `${environment.baseApiUrl}categories`;
 
   constructor(private http: HttpClient) {}
 
