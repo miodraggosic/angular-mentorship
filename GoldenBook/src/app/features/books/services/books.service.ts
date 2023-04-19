@@ -8,7 +8,7 @@ import { Book } from 'src/app/models/interfaces/book.interface';
   providedIn: 'root',
 })
 export class BooksService {
-  private booksUrl: string = `${environment.baseApiUrl}books`;
+  private readonly booksUrl: string = `${environment.baseApiUrl}books`;
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
