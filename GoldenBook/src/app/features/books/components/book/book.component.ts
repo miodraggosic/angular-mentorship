@@ -8,8 +8,8 @@ import { Book } from 'src/app/models/interfaces/book.interface';
 })
 export class BookComponent {
   @Input() book!: Book;
-  @Output() delete = new EventEmitter();
-  @Output() softDelete = new EventEmitter();
+  @Output() delete = new EventEmitter<void>();
+  @Output() softDelete = new EventEmitter<void>();
 
   onDelete(): void {
     this.delete.emit();
