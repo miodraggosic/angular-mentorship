@@ -1,16 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Observable, of, catchError, retry } from 'rxjs';
-import { Book } from 'src/app/models/interfaces/book.interface';
-import { books } from '@mocks/mock-books';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { environment } from '@env';
+import { Observable, catchError, map, of, pipe, retry } from 'rxjs';
+import { Book } from 'src/app/models/interfaces/book.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BooksService {
-  // private books: Book[] = books;
-
   private booksUrl: string = `${environment.baseApiUrl}books`;
 
   private httpOptions = {
@@ -22,7 +19,11 @@ export class BooksService {
   getAll(): Observable<Book[]> {
     return this.httpClientService
       .get<Book[]>(`${this.booksUrl}?deletedAt=null`)
-      .pipe(retry(2), catchError(this.handleError('Get books', [])));
+      .pipe(
+        this.getBookYear(),
+        retry(2),
+        catchError(this.handleError('Get books', []))
+      );
   }
 
   delete(id: number): Observable<any> {
@@ -49,8 +50,19 @@ export class BooksService {
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      console.log(operation, error.message);
+      console.error(operation, error.message);
       return of(result as T);
     };
+  }
+
+  private getBookYear() {
+    return pipe(
+      map((books: Book[]) => {
+        return books.map((book: Book) => {
+          book.year = new Date(book.year).getFullYear().toString();
+          return book;
+        });
+      })
+    );
   }
 }
