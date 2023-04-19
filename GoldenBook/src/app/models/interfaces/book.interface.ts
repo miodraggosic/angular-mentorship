@@ -7,9 +7,10 @@ export interface Book {
   country: string;
   isbn: number;
   year: string;
-  category: Categories;
+  category: string;
   description: string;
   reviewer: string;
   comment: string;
+  deletedAt: null | string;
   id: number;
 }
