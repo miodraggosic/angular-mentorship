@@ -1,4 +1,4 @@
-import { Categories } from '../enums/categories.enum';
+import { Review } from './review.interface';
 
 export interface Book {
   imageUrl: string;
@@ -9,7 +9,7 @@ export interface Book {
   year: string;
   category: string;
   description: string;
-  reviewer: string;
+  review: Review;
   comment: string;
   deletedAt: null | string;
   id: number;
