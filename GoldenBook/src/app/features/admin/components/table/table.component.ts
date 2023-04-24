@@ -1,5 +1,7 @@
+import { ReadMoreComponent } from './../read-more/read-more.component';
 import { BooksService } from './../../../books/services/books.service';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Book } from 'src/app/models/interfaces/book.interface';
 
 @Component({
@@ -60,10 +62,20 @@ export class TableComponent implements OnInit {
 
   displayedColumns = this.columns.map((c) => c.columnDef);
 
-  constructor(private booksService: BooksService) {}
+  constructor(
+    private readMore: MatDialog,
+    private booksService: BooksService
+  ) {}
 
   ngOnInit(): void {
     this.getAllBooks();
+  }
+
+  openReadMore(text: string) {
+    this.readMore
+      .open(ReadMoreComponent, { data: text, width: '50%' })
+      .afterClosed()
+      .subscribe((res) => console.log(res));
   }
 
   private getAllBooks() {

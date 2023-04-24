@@ -11,7 +11,7 @@
             <img [src]="column.cell(row)">
           </ng-container>
           <ng-container *ngSwitchCase="'description'">
-            <button>Read More</button>
+            <button (click)="openReadMore(column.cell(row))">Read More</button>
           </ng-container>
           <ng-container *ngSwitchCase="'overview'">
             <button>Overview</button>
