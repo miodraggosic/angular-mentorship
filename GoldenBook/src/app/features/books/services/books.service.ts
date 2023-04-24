@@ -17,6 +17,16 @@ export class BooksService {
   constructor(private httpClientService: HttpClient) {}
 
   getAll(): Observable<Book[]> {
+    return this.httpClientService
+      .get<Book[]>(`${this.booksUrl}`)
+      .pipe(
+        this.getBookYear(),
+        retry(2),
+        catchError(this.handleError('Get books', []))
+      );
+  }
+
+  getFiltered(): Observable<Book[]> {
     return this.httpClientService.get<Book[]>(`${this.booksUrl}`).pipe(
       map((data) => data.filter((books) => books.deletedAt === null)),
       this.getBookYear(),
