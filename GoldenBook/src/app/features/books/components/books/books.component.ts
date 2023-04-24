@@ -27,7 +27,7 @@ export class BooksComponent implements OnInit {
       .delete(book.id)
       .pipe(
         take(1),
-        switchMap(() => this.booksService.getAll())
+        switchMap(() => this.booksService.getFiltered())
       )
       .subscribe((data: Book[]) => (this.books = data));
   }
@@ -37,7 +37,7 @@ export class BooksComponent implements OnInit {
       .softDelete(book.id)
       .pipe(
         take(1),
-        switchMap(() => this.booksService.getAll())
+        switchMap(() => this.booksService.getFiltered())
       )
       .subscribe((data: Book[]) => {
         this.books = data;
@@ -46,7 +46,7 @@ export class BooksComponent implements OnInit {
 
   private getBooks(): void {
     this.booksService
-      .getAll()
+      .getFiltered()
       .pipe(take(1))
       .subscribe((data: Book[]) => (this.books = data));
   }
