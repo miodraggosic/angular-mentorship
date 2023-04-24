@@ -5,10 +5,18 @@ import { AdminBooksComponent } from './components/admin-books/admin-books.compon
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatTableModule } from '@angular/material/table';
 import { TableComponent } from './components/table/table.component';
+import { ReadMoreComponent } from './components/read-more/read-more.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [AdminBooksComponent, TableComponent],
-  imports: [CommonModule, SharedModule, AdminRoutingModule, MatTableModule],
+  declarations: [AdminBooksComponent, TableComponent, ReadMoreComponent],
+  imports: [
+    CommonModule,
+    SharedModule,
+    AdminRoutingModule,
+    MatTableModule,
+    MatDialogModule,
+  ],
   exports: [],
 })
 export class AdminModule {}
