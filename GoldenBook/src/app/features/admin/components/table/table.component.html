@@ -13,8 +13,11 @@
           <ng-container *ngSwitchCase="'description'">
             <button (click)="openReadMore(column.cell(row))">Read More</button>
           </ng-container>
+          <ng-container *ngSwitchCase="'review'">
+            <p [matTooltip]="column.cell(row)" aria-label="Reviewer and comment of book">{{column.cell(row)}}</p>
+          </ng-container>
           <ng-container *ngSwitchCase="'overview'">
-            <button>Overview</button>
+            <button><mat-icon>menu_book</mat-icon></button>
           </ng-container>
           <ng-container *ngSwitchDefault>
             {{column.cell(row)}}

@@ -3,4 +3,14 @@
 .mat-table {
   width: 100%;
   background-color: $white;
+
+  .mat-column-review {
+    max-width: 100px;
+    p {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
 }

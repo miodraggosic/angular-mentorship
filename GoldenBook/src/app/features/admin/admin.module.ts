@@ -7,6 +7,8 @@ import { MatTableModule } from '@angular/material/table';
 import { TableComponent } from './components/table/table.component';
 import { ReadMoreComponent } from './components/read-more/read-more.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [AdminBooksComponent, TableComponent, ReadMoreComponent],
@@ -16,6 +18,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     AdminRoutingModule,
     MatTableModule,
     MatDialogModule,
+    MatTooltipModule,
+    MatIconModule,
   ],
   exports: [],
 })

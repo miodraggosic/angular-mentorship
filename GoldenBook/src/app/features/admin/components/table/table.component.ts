@@ -49,9 +49,9 @@ export class TableComponent implements OnInit {
       cell: (book: Book) => `${book.isbn}`,
     },
     {
-      columnDef: 'reviewer',
+      columnDef: 'review',
       header: 'Reviewer/Review',
-      cell: (book: Book) => `${book.reviewer}`,
+      cell: (book: Book) => `${book.review.reviewer} "${book.review.comment}"`,
     },
     {
       columnDef: 'overview',
