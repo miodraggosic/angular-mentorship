@@ -13,5 +13,5 @@
     <app-book *ngFor="let book of books" [book]="book" (delete)="deleteBook(book)"
       (softDelete)="softDeleteBook(book)"></app-book>
   </div>
-  <app-pagination></app-pagination>
+  <app-pagination [length]="104" [pageSizeOptions]="[6, 12, 24]"></app-pagination>
 </div>

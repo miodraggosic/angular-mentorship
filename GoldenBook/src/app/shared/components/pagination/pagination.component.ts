@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
@@ -6,15 +6,13 @@ import { MatPaginator } from '@angular/material/paginator';
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.scss'],
 })
-export class PaginationComponent implements OnInit, AfterViewInit {
+export class PaginationComponent implements AfterViewInit {
   @ViewChild('pagination') paginator!: MatPaginator;
 
-  length: number = 104;
-  pageSizeOptions: number[] = [6, 12, 24];
+  @Input() length?: number;
+  @Input() pageSizeOptions!: number[];
 
   constructor() {}
-
-  ngOnInit(): void {}
 
   ngAfterViewInit() {
     this.paginator._intl.itemsPerPageLabel = 'Rows per page:';
