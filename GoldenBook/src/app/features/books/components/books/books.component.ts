@@ -10,6 +10,7 @@ import { BooksService } from '../../services/books.service';
 })
 export class BooksComponent implements OnInit {
   displayValue: string = '';
+  selectedCategories: string[] = [];
   books: Book[] = [];
 
   constructor(private booksService: BooksService) {}
@@ -20,6 +21,10 @@ export class BooksComponent implements OnInit {
 
   showValue(event: string): void {
     this.displayValue = event;
+  }
+
+  savedOptions(event: string[]): void {
+    this.selectedCategories = event;
   }
 
   deleteBook(book: Book): void {

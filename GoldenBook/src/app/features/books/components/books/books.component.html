@@ -6,7 +6,7 @@
 
   <form class="search-filter">
     <app-search (displayTerm)="showValue($event)"></app-search>
-    <app-dropdown></app-dropdown>
+    <app-dropdown (selected)="savedOptions($event)"></app-dropdown>
   </form>
 
   <div class="books">
