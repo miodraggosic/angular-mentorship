@@ -1,5 +1,6 @@
 <mat-form-field class="full-width" color="primary">
-  <mat-select #option multiple placeholder="Filter by Category" panelClass="app-color-select">
+  <mat-select #option multiple placeholder="Filter by Category" (selectionChange)="onChange(option.value)"
+    [ngModel]="defaultSelection" panelClass="app-color-select">
     <mat-option *ngFor="let category of categories" [value]="category">
       {{category}}
     </mat-option>

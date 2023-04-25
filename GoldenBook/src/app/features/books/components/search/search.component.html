@@ -1,5 +1,5 @@
 <mat-form-field class="full-width" color="primary">
-  <input matInput placeholder="Search by Book Name" (change)="searchTerm($event)">
+  <input matInput placeholder="Search by Book Name" (change)="searchTerm($event)" [value]="defaultValue">
   <button type="button" (click)="onClick()" matSuffix mat-icon-button aria-label="Search-icon">
     <mat-icon>search</mat-icon>
   </button>

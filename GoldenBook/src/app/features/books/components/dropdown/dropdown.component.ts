@@ -1,6 +1,7 @@
-import { Subject, takeUntil } from 'rxjs';
+import { StoreFiltersService } from './../../services/store-filters.service';
+import { take } from 'rxjs';
 import { CategoriesService } from '@shared/services/categories.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Categories } from 'src/app/models/enums/categories.enum';
 
 @Component({
@@ -8,30 +9,34 @@ import { Categories } from 'src/app/models/enums/categories.enum';
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss'],
 })
-export class DropdownComponent implements OnInit, OnDestroy {
+export class DropdownComponent implements OnInit {
+  @Output() selected = new EventEmitter<string[]>();
   categories: Categories[] = [];
+  defaultSelection?: string[] | null;
 
-  private unsubscribe$: Subject<void> = new Subject();
-
-  constructor(private categoriesService: CategoriesService) {}
+  constructor(
+    private categoriesService: CategoriesService,
+    private filterService: StoreFiltersService
+  ) {}
 
   ngOnInit(): void {
     this.getCategories();
+    this.getSelected();
   }
 
-  ngOnDestroy(): void {
-    this.unsubscribeAll();
+  onChange(selected: string[]) {
+    this.selected?.emit(selected);
+  }
+
+  getSelected(): void {
+    const saved = this.filterService.getFilters();
+    this.defaultSelection = saved?.categoriesSelected;
   }
 
   private getCategories(): void {
     this.categoriesService
       .getAll()
-      .pipe(takeUntil(this.unsubscribe$))
+      .pipe(take(1))
       .subscribe((data: Categories[]) => (this.categories = data));
-  }
-
-  private unsubscribeAll(): void {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
   }
 }
