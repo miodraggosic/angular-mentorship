@@ -20,6 +20,5 @@ const routes: Routes = [
   declarations: [],
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [SaveFiltersGuard],
 })
 export class BooksRoutingModule {}
