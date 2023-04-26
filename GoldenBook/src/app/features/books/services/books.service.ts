@@ -11,7 +11,10 @@ export class BooksService {
   private readonly booksUrl: string = `${environment.baseApiUrl}books`;
 
   private httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      PageName: 'BookOverview',
+    }),
   };
 
   constructor(private httpClientService: HttpClient) {}
@@ -43,7 +46,7 @@ export class BooksService {
 
   getById(id: number): Observable<Book | undefined> {
     return this.httpClientService
-      .get<Book>(`${this.booksUrl}/${id}`)
+      .get<Book>(`${this.booksUrl}/${id}`, this.httpOptions)
       .pipe(catchError(this.handleError<Book>('Get Book')));
   }
 
