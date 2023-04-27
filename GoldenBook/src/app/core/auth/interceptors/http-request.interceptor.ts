@@ -1,11 +1,10 @@
-import { Injectable } from '@angular/core';
 import {
-  HttpRequest,
-  HttpHandler,
   HttpEvent,
+  HttpHandler,
   HttpInterceptor,
-  HttpHeaders,
+  HttpRequest,
 } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -17,9 +16,7 @@ export class HttpRequestInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
     request = request.clone({
-      headers: new HttpHeaders({
-        AplicationName: 'GoldenBook',
-      }),
+      headers: request.headers.set('ApplicationName', 'GoldenBook'),
     });
     return next.handle(request);
   }
