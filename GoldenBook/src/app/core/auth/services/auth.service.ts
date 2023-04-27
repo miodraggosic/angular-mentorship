@@ -30,6 +30,11 @@ export class AuthService {
       );
   }
 
+  logout() {
+    localStorage.removeItem(this.storageKey);
+    this.router.navigateByUrl('login');
+  }
+
   isAuthentificated(): boolean {
     return localStorage.getItem(this.storageKey) !== null;
   }
