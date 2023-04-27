@@ -16,7 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { BooksLayoutComponent } from './layouts/books-layout/books-layout.component';
+import { HomepageLayoutComponent } from './layouts/homepage-layout/homepage-layout.component';
 import { FormsModule } from '@angular/forms';
 
 const COMPONENTS = [
@@ -25,7 +25,7 @@ const COMPONENTS = [
   SidenavComponent,
   PageNotFoundComponent,
   LoginComponent,
-  BooksLayoutComponent,
+  HomepageLayoutComponent,
 ];
 
 @NgModule({

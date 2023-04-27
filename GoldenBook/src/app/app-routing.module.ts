@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { LoginComponent } from './core/auth/components/login/login.component';
-import { BooksLayoutComponent } from './core/layouts/books-layout/books-layout.component';
+import { HomepageLayoutComponent } from './core/layouts/homepage-layout/homepage-layout.component';
 
 const routes: Routes = [
   {
@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'homepage',
-    component: BooksLayoutComponent,
+    component: HomepageLayoutComponent,
     canActivate: [AuthGuard],
     children: [
       {
