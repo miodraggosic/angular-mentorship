@@ -30,6 +30,10 @@ export class AuthService {
       );
   }
 
+  isAuthentificated(): boolean {
+    return localStorage.getItem(this.storageKey) !== null;
+  }
+
   private storeUser(arr: User[]) {
     const user = arr.map((user: User) => {
       return {

@@ -1,3 +1,4 @@
+import { AuthGuard } from './core/auth/guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
@@ -18,14 +19,17 @@ const routes: Routes = [
   {
     path: 'homepage',
     component: BooksLayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
+        canLoad: [AuthGuard],
         loadChildren: () =>
           import('./features/books/books.module').then((m) => m.BooksModule),
       },
       {
         path: 'admin',
+        canLoad: [AuthGuard],
         loadChildren: () =>
           import('./features/admin/admin.module').then((m) => m.AdminModule),
       },
