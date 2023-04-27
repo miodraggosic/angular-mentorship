@@ -4,20 +4,24 @@
   </mat-card-header>
 
   <mat-card-content>
-
-    <form>
+    <form (ngSubmit)="onSubmit()">
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input matInput>
+        <input matInput name="email" [(ngModel)]="loginForm.email">
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
-        <input matInput>
+        <input matInput name="password" [(ngModel)]="loginForm.password">
       </mat-form-field>
     </form>
   </mat-card-content>
 
   <mat-card-actions>
-    <app-button [text]="'Login'"></app-button>
+    <button (click)="onSubmit()">Login</button>
   </mat-card-actions>
+  <ng-container *ngIf="registered">
+    <mat-card-footer>
+      You are not registered
+    </mat-card-footer>
+  </ng-container>
 </mat-card>

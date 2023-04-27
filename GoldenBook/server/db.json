@@ -97,7 +97,6 @@
       "id": 6
     }
   ],
-
   "categories": [
     {
       "name": "General",
@@ -114,6 +113,26 @@
     {
       "name": "Science",
       "id": 4
+    }
+  ],
+  "users": [
+    {
+      "firstName": "Miodrag",
+      "lastName": "Gosic",
+      "email": "gosmio88@gmail.com",
+      "password": 1313,
+      "country": "Serbia",
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "firstName": "Petar",
+      "lastName": "Petrovic",
+      "email": "petar@gmail.com",
+      "password": 1414,
+      "country": "Serbia",
+      "role": "user",
+      "id": 2
     }
   ]
 }
