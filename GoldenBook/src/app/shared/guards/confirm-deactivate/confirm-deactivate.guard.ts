@@ -17,10 +17,10 @@ export class ConfirmDeactivateGuard
     const modal = this.matDialog.open(ConfirmDialogComponent, {
       data: 'Are you sure that you want to leave page?',
     });
-    const $confirm = modal
+    const confirm$ = modal
       .afterClosed()
       .pipe<boolean>(tap((res: boolean) => res));
 
-    return $confirm;
+    return confirm$;
   }
 }
