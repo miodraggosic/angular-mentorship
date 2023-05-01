@@ -1,0 +1,7 @@
+@import "../../../../styles/variables.scss";
+@import "../../../../styles/form-fields.scss";
+
+:host {
+  @include form-input;
+  flex: 1;
+}

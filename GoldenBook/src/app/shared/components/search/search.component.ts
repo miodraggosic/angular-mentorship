@@ -1,4 +1,4 @@
-import { StoreFiltersService } from './../../services/store-filters.service';
+import { StoreFiltersService } from '../../../features/books/services/store-filters.service';
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({

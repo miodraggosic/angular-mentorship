@@ -1,4 +1,4 @@
-import { StoreFiltersService } from './../../services/store-filters.service';
+import { StoreFiltersService } from '../../../features/books/services/store-filters.service';
 import { take } from 'rxjs';
 import { CategoriesService } from '@shared/services/categories.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
