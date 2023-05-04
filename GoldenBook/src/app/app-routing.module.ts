@@ -1,16 +1,20 @@
-import { AuthGuard } from './core/auth/guards/auth.guard';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { Routes } from '@angular/router';
-import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
+import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './core/auth/components/login/login.component';
+import { SignUpComponent } from './core/auth/components/sign-up/sign-up.component';
+import { AuthGuard } from './core/auth/guards/auth.guard';
+import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { HomepageLayoutComponent } from './core/layouts/homepage-layout/homepage-layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'signUp',
     pathMatch: 'full',
+  },
+  {
+    path: 'signUp',
+    component: SignUpComponent,
   },
   {
     path: 'login',

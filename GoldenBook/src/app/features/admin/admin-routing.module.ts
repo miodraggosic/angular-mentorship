@@ -2,6 +2,7 @@ import { AdminBooksComponent } from './components/admin-books/admin-books.compon
 import { NgModule } from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from 'src/app/core/auth/guards/admin.guard';
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
   {
     path: 'books',
     component: AdminBooksComponent,
+    canActivate: [AdminGuard],
   },
 ];
 @NgModule({
