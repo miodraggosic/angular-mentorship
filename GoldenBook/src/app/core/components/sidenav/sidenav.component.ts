@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CategoriesService } from '@shared/services/categories.service';
 import { SidenavService } from '../../services/sidenav.service';
 import { Category } from 'src/app/models/interfaces/category.interface';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -11,19 +12,21 @@ import { Category } from 'src/app/models/interfaces/category.interface';
 })
 export class SidenavComponent implements OnInit {
   isVisible: boolean = false;
-
+  showAdminLinks: boolean = false;
   categories: Category[] = [];
 
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   constructor(
     private categoriesService: CategoriesService,
-    private sidenavService: SidenavService
+    private sidenavService: SidenavService,
+    private auth: AuthService
   ) {}
 
   ngOnInit(): void {
     this.getCategories();
     this.toggleVisible();
+    this.showAdminLinks = this.auth.isAdmin();
   }
 
   ngOnDestroy(): void {
