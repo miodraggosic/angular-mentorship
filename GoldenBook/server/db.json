@@ -119,20 +119,51 @@
     {
       "firstName": "Miodrag",
       "lastName": "Gosic",
+      "countryId": 1,
       "email": "gosmio88@gmail.com",
-      "password": 1313,
-      "country": "Serbia",
+      "password": "1313",
       "role": "admin",
       "id": 1
     },
     {
       "firstName": "Petar",
       "lastName": "Petrovic",
-      "email": "petar@gmail.com",
-      "password": 1414,
-      "country": "Serbia",
+      "countryId": 2,
+      "email": "pera@gmail.com",
+      "password": "1212",
       "role": "user",
       "id": 2
+    },
+    {
+      "firstName": "Milan",
+      "lastName": "Markovic",
+      "countryId": 3,
+      "email": "mile@gmail.com",
+      "password": "2323",
+      "role": "user",
+      "id": 3
+    }
+  ],
+  "countries": [
+    {
+      "name": "Serbia",
+      "id": 1
+    },
+    {
+      "name": "Montenegro",
+      "id": 2
+    },
+    {
+      "name": "BiH",
+      "id": 3
+    },
+    {
+      "name": "Croatia",
+      "id": 4
+    },
+    {
+      "name": "Slovenia",
+      "id": 5
     }
   ]
 }

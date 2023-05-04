@@ -1,9 +1,9 @@
-import { Login, User } from './../interfaces/user.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from '@env';
 import { Observable, map } from 'rxjs';
-import { Router } from '@angular/router';
+import { Login, SignUp, User } from './../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -30,6 +30,19 @@ export class AuthService {
       );
   }
 
+  signUp(user: SignUp) {
+    const registerUser: User = this.registerUser(user);
+    return this.httpClient
+      .post<User>(`${environment.baseApiUrl}users`, registerUser)
+      .pipe(
+        map((res) => {
+          if (res) {
+            this.router.navigateByUrl('login');
+          }
+        })
+      );
+  }
+
   logout() {
     localStorage.removeItem(this.storageKey);
     this.router.navigateByUrl('login');
@@ -37,6 +50,15 @@ export class AuthService {
 
   isAuthentificated(): boolean {
     return localStorage.getItem(this.storageKey) !== null;
+  }
+
+  isAdmin(): boolean {
+    const user = JSON.parse(localStorage.getItem(this.storageKey)!);
+
+    if (user.role === 'admin') {
+      return true;
+    }
+    return false;
   }
 
   private storeUser(arr: User[]) {
@@ -48,5 +70,17 @@ export class AuthService {
       };
     })[0];
     localStorage.setItem(this.storageKey, JSON.stringify(user));
+  }
+
+  private registerUser(user: SignUp): User {
+    const userToRegister: User = {
+      firstName: user.firstName!,
+      lastName: user.lastName!,
+      countryId: Number(user.country)!,
+      email: user.email!,
+      password: user.password.newPassword!,
+      role: user.role!,
+    };
+    return userToRegister;
   }
 }
