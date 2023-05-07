@@ -22,17 +22,12 @@ export class BooksService {
   getAll(): Observable<Book[]> {
     return this.httpClientService
       .get<Book[]>(`${this.booksUrl}`)
-      .pipe(
-        this.getBookYear(),
-        retry(2),
-        catchError(this.handleError('Get books', []))
-      );
+      .pipe(retry(2), catchError(this.handleError('Get books', [])));
   }
 
   getFiltered(): Observable<Book[]> {
     return this.httpClientService.get<Book[]>(`${this.booksUrl}`).pipe(
       map((data) => data.filter((books) => books.deletedAt === null)),
-      this.getBookYear(),
       retry(2),
       catchError(this.handleError('Get books', []))
     );
@@ -65,16 +60,5 @@ export class BooksService {
       console.error(operation, error.message);
       return of(result as T);
     };
-  }
-
-  private getBookYear() {
-    return pipe(
-      map((books: Book[]) => {
-        return books.map((book: Book) => {
-          book.year = new Date(book.year).getFullYear().toString();
-          return book;
-        });
-      })
-    );
   }
 }

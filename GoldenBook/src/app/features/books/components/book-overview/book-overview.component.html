@@ -13,7 +13,7 @@
           <div class="book-bio">
             <p>BookId: #{{book.id}}</p>
 
-            <h5>{{book.author}}, {{book.year}}</h5>
+            <h5>{{book.author}}, {{book.year | date:'yyyy'}}</h5>
             <p>County: {{book.country}}</p>
             <p>Category: {{book.category}}</p>
             <p>ISBN: {{book.isbn}}</p>
