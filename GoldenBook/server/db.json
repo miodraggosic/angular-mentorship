@@ -119,29 +119,12 @@
     {
       "firstName": "Miodrag",
       "lastName": "Gosic",
-      "countryId": 1,
+      "countryId": 3,
+      "createdAt": "2023-05-07T18:49:08.087Z",
       "email": "gosmio88@gmail.com",
       "password": "1313",
-      "role": "admin",
+      "role": "user",
       "id": 1
-    },
-    {
-      "firstName": "Petar",
-      "lastName": "Petrovic",
-      "countryId": 2,
-      "email": "pera@gmail.com",
-      "password": "1212",
-      "role": "user",
-      "id": 2
-    },
-    {
-      "firstName": "Milan",
-      "lastName": "Markovic",
-      "countryId": 3,
-      "email": "mile@gmail.com",
-      "password": "2323",
-      "role": "user",
-      "id": 3
     }
   ],
   "countries": [

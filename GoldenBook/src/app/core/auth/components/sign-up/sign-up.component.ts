@@ -36,8 +36,6 @@ export class SignUpComponent implements OnInit {
 
   onSubmit() {
     const user: SignUp = this.userForm.value;
-    console.log(this.userForm.status);
-    console.log(this.userForm.value);
     this.auth
       .signUp(user)
       .pipe(take(1))
