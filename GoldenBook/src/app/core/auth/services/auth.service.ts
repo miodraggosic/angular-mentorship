@@ -43,7 +43,7 @@ export class AuthService {
       );
   }
 
-  logout() {
+  logout(): void {
     localStorage.removeItem(this.storageKey);
     this.router.navigateByUrl('login');
   }
@@ -61,7 +61,7 @@ export class AuthService {
     return false;
   }
 
-  private storeUser(arr: User[]) {
+  private storeUser(arr: User[]): void {
     const user = arr.map((user: User) => {
       return {
         firstName: user.firstName,
@@ -77,6 +77,7 @@ export class AuthService {
       firstName: user.firstName!,
       lastName: user.lastName!,
       countryId: Number(user.country)!,
+      createdAt: new Date().toISOString(),
       email: user.email!,
       password: user.password.newPassword!,
       role: user.role!,

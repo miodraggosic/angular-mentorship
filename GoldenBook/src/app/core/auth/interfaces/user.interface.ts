@@ -22,6 +22,7 @@ export interface User {
   firstName: string;
   lastName: string;
   countryId: number;
+  createdAt: string;
   password: string;
   role: string;
   id?: number;
