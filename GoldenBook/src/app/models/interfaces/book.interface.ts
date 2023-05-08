@@ -3,7 +3,7 @@ import { Review } from './review.interface';
 export interface Book {
   imageUrl: string;
   title: string;
-  author: string;
+  author: Author;
   country: string;
   isbn: number;
   year: string;
@@ -13,4 +13,9 @@ export interface Book {
   comment: string;
   deletedAt: null | string;
   id: number;
+}
+
+export interface Author {
+  firstName: string;
+  lastName: string;
 }

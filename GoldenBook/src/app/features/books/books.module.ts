@@ -14,12 +14,14 @@ import { BookComponent } from './components/book/book.component';
 import { BooksComponent } from './components/books/books.component';
 
 import { BookBackgroundDirective } from './directives/book-background.directive';
+import { FullNamePipe } from './pipes/full-name.pipe';
 @NgModule({
   declarations: [
     BooksComponent,
     BookComponent,
     BookOverviewComponent,
     BookBackgroundDirective,
+    FullNamePipe,
   ],
   imports: [
     CommonModule,
