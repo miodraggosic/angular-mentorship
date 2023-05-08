@@ -10,7 +10,7 @@
       <div class="book-bio">
         <h5>{{book.author | fullName | titlecase}}, {{book.year | date:'yyyy'}}</h5>
         <p>Category: {{book.category}}</p>
-        <p class="description">{{book.description}}</p>
+        <p class="description">{{book.description | textLength:56}}</p>
         <mat-card-actions>
           <app-button [text]="'Book Overview'" [isBig]="false" [routerLink]="['book', book.id]"></app-button>
           <app-button [text]="'Delete'" [isBig]="false" (click)="onDelete()"></app-button>

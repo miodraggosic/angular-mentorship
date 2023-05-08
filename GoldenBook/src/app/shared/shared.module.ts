@@ -8,6 +8,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { ButtonComponent } from './components/button/button.component';
@@ -15,8 +17,9 @@ import { TitleComponent } from './components/title/title.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { SearchComponent } from './components/search/search.component';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
+
+import { FullNamePipe } from './pipes/full-name.pipe';
+import { TextLengthPipe } from './pipes/text-length.pipe';
 
 const COMPONENTS = [
   ButtonComponent,
@@ -25,6 +28,8 @@ const COMPONENTS = [
   ConfirmDialogComponent,
   DropdownComponent,
   SearchComponent,
+  FullNamePipe,
+  TextLengthPipe,
 ];
 
 @NgModule({
