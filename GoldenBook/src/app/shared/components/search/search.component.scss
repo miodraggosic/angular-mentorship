@@ -4,4 +4,12 @@
 :host {
   @include form-input;
   flex: 1;
+
+  .green {
+    border: 2px solid green;
+  }
+
+  .red {
+    border: 2px solid red;
+  }
 }

@@ -20,6 +20,7 @@ import { SearchComponent } from './components/search/search.component';
 
 import { FullNamePipe } from './pipes/full-name.pipe';
 import { TextLengthPipe } from './pipes/text-length.pipe';
+import { FieldBorderDirective } from './directives/field-border.directive';
 
 const COMPONENTS = [
   ButtonComponent,
@@ -30,6 +31,7 @@ const COMPONENTS = [
   SearchComponent,
   FullNamePipe,
   TextLengthPipe,
+  FieldBorderDirective,
 ];
 
 @NgModule({

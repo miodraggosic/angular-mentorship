@@ -26,7 +26,7 @@ export class TableComponent implements OnInit {
     {
       columnDef: 'author',
       header: 'Author',
-      cell: (book: Book) => `${book.author}`,
+      cell: (book: Book) => `${book.author.firstName} ${book.author.lastName}`,
     },
     {
       columnDef: 'year',
