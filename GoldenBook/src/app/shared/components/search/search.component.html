@@ -1,6 +1,5 @@
-<mat-form-field class="full-width" color="primary">
-  <input matInput #search placeholder="Search by Book Name" (change)="searchTerm($event)"
-    [ngModel]="search.value | lowercase" [value]="defaultValue" appFieldBorder>
+<mat-form-field class="search full-width" color="primary" appFieldBorder [value]="defaultValue">
+  <input matInput placeholder="Search by Book Name" (change)="searchTerm($event)" [ngModel]="defaultValue | lowercase">
   <button type="button" (click)="onClick()" matSuffix mat-icon-button aria-label="Search-icon">
     <mat-icon>search</mat-icon>
   </button>
