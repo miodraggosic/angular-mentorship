@@ -21,6 +21,8 @@ import { SearchComponent } from './components/search/search.component';
 import { FullNamePipe } from './pipes/full-name.pipe';
 import { TextLengthPipe } from './pipes/text-length.pipe';
 import { FieldBorderDirective } from './directives/field-border.directive';
+import { ValidCheckPipe } from './pipes/valid-check.pipe';
+import { ErrorMessagePipe } from './pipes/error-message.pipe';
 
 const COMPONENTS = [
   ButtonComponent,
@@ -32,6 +34,8 @@ const COMPONENTS = [
   FullNamePipe,
   TextLengthPipe,
   FieldBorderDirective,
+  ValidCheckPipe,
+  ErrorMessagePipe,
 ];
 
 @NgModule({
