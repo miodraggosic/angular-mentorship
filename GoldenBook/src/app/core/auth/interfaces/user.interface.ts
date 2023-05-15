@@ -1,4 +1,10 @@
-import { FormControl, FormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  ValidationErrors,
+  ValidatorFn,
+} from '@angular/forms';
 
 export interface Login {
   email: string;
@@ -33,3 +39,16 @@ export type ControlsOf<T extends Record<string, any>> = {
     ? FormGroup<ControlsOf<T[K]>>
     : FormControl<T[K]>;
 };
+
+export function checkPassword(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const getNewPassword = control.get('newPassword');
+    const getConfirmPassword = control.get('confirmPassword');
+    console.log(control);
+
+    const isSame =
+      getNewPassword?.value === getConfirmPassword?.value ? true : false;
+
+    return isSame ? null : { notSame: true };
+  };
+}

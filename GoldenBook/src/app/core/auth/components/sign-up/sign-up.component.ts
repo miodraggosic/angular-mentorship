@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  AbstractControl,
-  FormControl,
-  FormGroup,
-  ValidationErrors,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CountriesService } from '@shared/services/countries.service';
 import { take } from 'rxjs';
 import { Country } from '../../interfaces/country.interface';
-import { ControlsOf, SignUp } from '../../interfaces/user.interface';
+import {
+  ControlsOf,
+  SignUp,
+  checkPassword,
+} from '../../interfaces/user.interface';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -73,41 +71,26 @@ export class SignUpComponent implements OnInit {
       });
   }
 
+  private nameValidators = [Validators.required, Validators.pattern(/^[A-Z]+/)];
+  private passwordValidators = [
+    Validators.required,
+    Validators.pattern(/^\S+$/),
+  ];
+
   private createForm(): void {
     this.userForm = new FormGroup<ControlsOf<SignUp>>({
-      firstName: new FormControl('', [
-        Validators.required,
-        Validators.pattern(/^[A-Z]+/),
-      ]),
-      lastName: new FormControl('', [
-        Validators.required,
-        Validators.pattern(/^[A-Z]+/),
-      ]),
+      firstName: new FormControl('', this.nameValidators),
+      lastName: new FormControl('', this.nameValidators),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormGroup(
         {
-          newPassword: new FormControl('', [
-            Validators.required,
-            Validators.pattern(/^\S+$/),
-          ]),
-          confirmPassword: new FormControl('', Validators.required),
+          newPassword: new FormControl('', this.passwordValidators),
+          confirmPassword: new FormControl('', this.passwordValidators),
         },
-        { validators: this.checkPassword() }
+        { validators: checkPassword() }
       ),
       role: new FormControl('user'),
       country: new FormControl('', Validators.required),
     });
-  }
-
-  private checkPassword() {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const getNewPassword = control.get('newPassword');
-      const getConfirmPassword = control.get('confirmPassword');
-
-      const isSame =
-        getNewPassword?.value === getConfirmPassword?.value ? true : false;
-
-      return isSame ? null : { notSame: true };
-    };
   }
 }
