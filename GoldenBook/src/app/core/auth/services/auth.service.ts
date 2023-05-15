@@ -37,7 +37,7 @@ export class AuthService {
       .pipe(
         map((res) => {
           if (res) {
-            this.router.navigateByUrl('login');
+            setTimeout(() => this.router.navigateByUrl('login'), 1200);
           }
         })
       );
