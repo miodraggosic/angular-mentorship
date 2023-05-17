@@ -5,9 +5,11 @@
     color: $black;
     background-color: $white;
     border-radius: 4px;
-    padding: 4%;
     gap: 4%;
     align-items: center;
+    .mat-card {
+      background-color: inherit;
+    }
 
     .mat-card-header-text {
       margin: 0;
