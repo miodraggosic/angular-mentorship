@@ -18,9 +18,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { HomepageLayoutComponent } from './layouts/homepage-layout/homepage-layout.component';
-
 import { SignUpComponent } from './auth/components/sign-up/sign-up.component';
+import { SidenavContentComponent } from './components/sidenav-content/sidenav-content.component';
+
+import { HomepageLayoutComponent } from './layouts/homepage-layout/homepage-layout.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -30,6 +31,7 @@ const COMPONENTS = [
   LoginComponent,
   HomepageLayoutComponent,
   SignUpComponent,
+  SidenavContentComponent,
 ];
 
 @NgModule({
