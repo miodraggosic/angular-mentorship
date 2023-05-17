@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BookOverviewComponent } from './components/book-overview/book-overview.component';
 import { BookComponent } from './components/book/book.component';
 import { BooksComponent } from './components/books/books.component';
+import { BookCardComponent } from './components/book-card/book-card.component';
 
 import { BookBackgroundDirective } from './directives/book-background.directive';
 
@@ -21,6 +22,7 @@ import { BookBackgroundDirective } from './directives/book-background.directive'
     BookComponent,
     BookOverviewComponent,
     BookBackgroundDirective,
+    BookCardComponent,
   ],
   imports: [
     CommonModule,
