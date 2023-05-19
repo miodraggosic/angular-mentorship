@@ -1,4 +1,19 @@
 <mat-card>
-  <ng-content select="[title]"></ng-content>
-  <ng-content select="[body]"></ng-content>
+  <mat-card-content>
+    <mat-card-header>
+      <mat-card-title>
+        <ng-content select="[title]"></ng-content>
+      </mat-card-title>
+    </mat-card-header>
+  </mat-card-content>
+
+  <mat-card-content class="book">
+    <ng-content select="[image]"></ng-content>
+    <div class="book-bio">
+      <ng-content select="[bio]"></ng-content>
+      <mat-card-actions>
+        <ng-content select="[buttons]"></ng-content>
+      </mat-card-actions>
+    </div>
+  </mat-card-content>
 </mat-card>

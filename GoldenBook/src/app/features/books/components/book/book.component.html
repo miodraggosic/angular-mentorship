@@ -1,26 +1,19 @@
 <div class="book-card" appBookBackground [category]="book.category">
   <app-book-card>
-    <mat-card-content title>
-      <mat-card-header>
-        <mat-card-title>
-          <h3>{{book.title | titlecase}}</h3>
-        </mat-card-title>
-      </mat-card-header>
-    </mat-card-content>
-    <mat-card-content body>
-      <mat-card-content class="book">
-        <img mat-card-image [src]="book.imageUrl" alt="Book Cover">
-        <div class="book-bio">
-          <h5>{{book.author | fullName | titlecase}}, {{book.year | date:'yyyy'}}</h5>
-          <p>Category: {{book.category}}</p>
-          <p class="description">{{book.description | textLength:56}}</p>
-          <mat-card-actions>
-            <app-button [text]="'Book Overview'" [isBig]="false" [routerLink]="['book', book.id]"></app-button>
-            <app-button [text]="'Delete'" [isBig]="false" (click)="onDelete()"></app-button>
-            <app-button [text]="'Soft Delete'" [isBig]="false" (click)="onSoftDelete()"></app-button>
-          </mat-card-actions>
-        </div>
-      </mat-card-content>
-    </mat-card-content>
+    <ng-container title>
+      <h3>{{book.title | titlecase}}</h3>
+    </ng-container>
+
+    <img image mat-card-image [src]="book.imageUrl" alt="Book Cover">
+    <ng-container bio>
+      <h5>{{book.author | fullName | titlecase}}, {{book.year | date:'yyyy'}}</h5>
+      <p>Category: {{book.category}}</p>
+      <p class="description">{{book.description | textLength:56}}</p>
+    </ng-container>
+    <ng-container buttons>
+      <app-button [text]="'Book Overview'" [isBig]="false" [routerLink]="['book', book.id]"></app-button>
+      <app-button [text]="'Delete'" [isBig]="false" (click)="onDelete()"></app-button>
+      <app-button [text]="'Soft Delete'" [isBig]="false" (click)="onSoftDelete()"></app-button>
+    </ng-container>
   </app-book-card>
 </div>
